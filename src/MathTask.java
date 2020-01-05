@@ -59,6 +59,17 @@ public class MathTask {
 
                 MathTaskDelta MTD = new MathTaskDelta(income, expense);
                 System.out.println(MTD);
+            case 5:
+                System.out.println("PMT");
+                double PMT = sc.nextDouble();
+                System.out.println("r");
+                double r3 = sc.nextDouble();
+                System.out.println("t");
+                double t3 = sc.nextDouble();
+
+                MathTaskEpsilon MTE = new MathTaskEpsilon(PMT, r3, t3);
+                System.out.println(MTE);
+
         }
 
     }
