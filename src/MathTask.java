@@ -80,7 +80,15 @@ public class MathTask {
                 MathTaskZeta MTZ = new MathTaskZeta(PMT1, r4, t4);
                 System.out.println(MTZ);
             case 7:
+                System.out.println("Ending Value");
+                double EV = sc.nextDouble();
+                System.out.println("Beginning Value");
+                double BV = sc.nextDouble();
+                System.out.println("t");
+                double t5 = sc.nextDouble();
 
+                MathTaskTheta MTT = new MathTaskTheta(EV, BV, t5);
+                System.out.println(MTT);
         }
 
     }
