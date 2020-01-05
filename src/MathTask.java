@@ -69,6 +69,17 @@ public class MathTask {
 
                 MathTaskEpsilon MTE = new MathTaskEpsilon(PMT, r3, t3);
                 System.out.println(MTE);
+            case 6:
+                System.out.println("PMT");
+                double PMT1 =sc.nextDouble();
+                System.out.println("r");
+                double r4 = sc.nextDouble();
+                System.out.println("t4");
+                double t4 = sc.nextDouble();
+
+                MathTaskZeta MTZ = new MathTaskZeta(PMT1, r4, t4);
+                System.out.println(MTZ);
+            case 7:
 
         }
 
