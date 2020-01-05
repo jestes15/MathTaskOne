@@ -6,9 +6,8 @@ public class MathTaskAlpha {
         double calcParent = 1 + (r / n);
         double exp = -(n * t);
         double calcBracket = 1 - Math.pow(calcParent, exp);
-        double calcDenom = n * calcBracket;
-        double getCalc = calcNum / calcDenom;
-        this.A = getCalc;
+        double calcDenominator = n * calcBracket;
+        this.A = calcNum / calcDenominator;
     }
 
     @Override
