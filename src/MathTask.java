@@ -127,6 +127,8 @@ public class MathTask {
                     MathTaskPsi MTP = new MathTaskPsi(b, p, APR);
                     System.out.println(MTP);
                 }
+            default:
+                System.out.println("This is the end. More coming soon.");
         }
 
     }
