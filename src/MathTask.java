@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Random;
 public class MathTask {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -13,8 +12,8 @@ public class MathTask {
         System.out.println("7: Compound Annual Growth Rate");
         System.out.println("8: Leverage Ratio");
         System.out.println("9: Rule of 72");
-        System.out.println("10: Expected Return Of A Portfolio");
-        System.out.println("11: Credit Card Equation");
+        //System.out.println("10: Expected Return Of A Portfolio");
+        System.out.println("10: Credit Card Equation");
         int eqNum = sc.nextInt();
         switch(eqNum) {
             case 1:
@@ -69,7 +68,67 @@ public class MathTask {
 
                 MathTaskEpsilon MTE = new MathTaskEpsilon(PMT, r3, t3);
                 System.out.println(MTE);
+            case 6:
+                System.out.println("PMT");
+                double PMT1 =sc.nextDouble();
+                System.out.println("r");
+                double r4 = sc.nextDouble();
+                System.out.println("t4");
+                double t4 = sc.nextDouble();
 
+                MathTaskZeta MTZ = new MathTaskZeta(PMT1, r4, t4);
+                System.out.println(MTZ);
+            case 7:
+                System.out.println("Ending Value");
+                double EV = sc.nextDouble();
+                System.out.println("Beginning Value");
+                double BV = sc.nextDouble();
+                System.out.println("t");
+                double t5 = sc.nextDouble();
+
+                MathTaskTheta MTT = new MathTaskTheta(EV, BV, t5);
+                System.out.println(MTT);
+            case 8:
+                System.out.println("Total Liabilities");
+                double TL = sc.nextDouble();
+                System.out.println("Total Debts");
+                double TD = sc.nextDouble();
+                System.out.println("Total Income");
+                double TI = sc.nextDouble();
+
+                MathTaskIota MTI = new MathTaskIota(TL, TD, TI);
+                System.out.println(MTI);
+            case 9:
+                System.out.println("r");
+                double r5 = sc.nextDouble();
+
+                MathTaskXi MTX = new MathTaskXi(r5);
+                System.out.println(MTX);
+            case 10:
+                System.out.println("Balance");
+                double b = sc.nextDouble();
+                System.out.println("Monthly Payment");
+                double p = sc.nextDouble();
+
+                System.out.println("Do you have the daily interest rate? 1 is yes 0 is no");
+                int Ans = sc.nextInt();
+
+                if (Ans == 1) {
+                    System.out.println("Interest rate");
+                    double i = sc.nextDouble();
+
+                    MathTaskOmicron MTO = new MathTaskOmicron(b, p, i);
+                    System.out.println(MTO);
+                }
+                if (Ans == 0) {
+                    System.out.println("APR");
+                    double APR = sc.nextDouble();
+
+                    MathTaskPsi MTP = new MathTaskPsi(b, p, APR);
+                    System.out.println(MTP);
+                }
+            default:
+                System.out.println("This is the end. More coming soon.");
         }
 
     }

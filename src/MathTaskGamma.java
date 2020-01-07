@@ -4,8 +4,7 @@ public class MathTaskGamma {
     public MathTaskGamma(double P, double r, double n, double t) {
         double getParenthesis = 1 + (r/n);
         double getExponent = Math.pow(getParenthesis, n*t);
-        double A = P * getExponent;
-        this.AmntAcc = A;
+        this.AmntAcc = P * getExponent;
     }
     @Override
     public String toString() {
