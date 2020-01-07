@@ -9,7 +9,6 @@ public class MathTaskAlpha {
         double calcDenominator = n * calcBracket;
         this.A = calcNum / calcDenominator;
     }
-
     @Override
     public String toString() { return "A = " + A; }
 }
