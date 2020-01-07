@@ -12,10 +12,12 @@ public class MathTask {
         System.out.println("7: Compound Annual Growth Rate");
         System.out.println("8: Leverage Ratio");
         System.out.println("9: Rule of 72");
-        //System.out.println("10: Expected Return Of A Portfolio");
         System.out.println("10: Credit Card Equation");
+        System.out.println("11: Consumption");
+
         int eqNum = sc.nextInt();
         switch(eqNum) {
+
             case 1:
                 System.out.println("r");
                 double r = sc.nextDouble();
@@ -28,6 +30,7 @@ public class MathTask {
 
                 MathTaskAlpha MTA = new MathTaskAlpha(r, P, n, t);
                 System.out.println(MTA);
+
             case 2:
                 System.out.println("P");
                 double P1 = sc.nextDouble();
@@ -38,6 +41,7 @@ public class MathTask {
 
                 MathTaskBeta MTB = new MathTaskBeta(P1, r1, t1);
                 System.out.println(MTB);
+
             case 3:
                 System.out.println("P");
                 double P2 = sc.nextDouble();
@@ -50,6 +54,7 @@ public class MathTask {
 
                 MathTaskGamma MTG = new MathTaskGamma(P2, r2, n2, t2);
                 System.out.println(MTG);
+
             case 4:
                 System.out.println("Income");
                 double income = sc.nextDouble();
@@ -58,6 +63,7 @@ public class MathTask {
 
                 MathTaskDelta MTD = new MathTaskDelta(income, expense);
                 System.out.println(MTD);
+
             case 5:
                 System.out.println("PMT");
                 double PMT = sc.nextDouble();
@@ -68,6 +74,7 @@ public class MathTask {
 
                 MathTaskEpsilon MTE = new MathTaskEpsilon(PMT, r3, t3);
                 System.out.println(MTE);
+
             case 6:
                 System.out.println("PMT");
                 double PMT1 =sc.nextDouble();
@@ -78,6 +85,7 @@ public class MathTask {
 
                 MathTaskZeta MTZ = new MathTaskZeta(PMT1, r4, t4);
                 System.out.println(MTZ);
+
             case 7:
                 System.out.println("Ending Value");
                 double EV = sc.nextDouble();
@@ -88,6 +96,7 @@ public class MathTask {
 
                 MathTaskTheta MTT = new MathTaskTheta(EV, BV, t5);
                 System.out.println(MTT);
+
             case 8:
                 System.out.println("Total Liabilities");
                 double TL = sc.nextDouble();
@@ -98,12 +107,14 @@ public class MathTask {
 
                 MathTaskIota MTI = new MathTaskIota(TL, TD, TI);
                 System.out.println(MTI);
+
             case 9:
                 System.out.println("r");
                 double r5 = sc.nextDouble();
 
                 MathTaskXi MTX = new MathTaskXi(r5);
                 System.out.println(MTX);
+
             case 10:
                 System.out.println("Balance");
                 double b = sc.nextDouble();
@@ -127,6 +138,12 @@ public class MathTask {
                     MathTaskPsi MTP = new MathTaskPsi(b, p, APR);
                     System.out.println(MTP);
                 }
+
+            case 11:
+                System.out.println("C");
+                System.out.println("I");
+                System.out.println("Hello");
+
             default:
                 System.out.println("This is the end. More coming soon.");
         }

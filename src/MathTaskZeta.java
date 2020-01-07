@@ -3,9 +3,9 @@ public class MathTaskZeta {
 
     public MathTaskZeta(double PMT, double r, double t) {
         double exponent = Math.pow((1 + r), t);
-        double getFrac1 = exponent/r;
-        double getFrac2 = 1/r;
-        double getParenthesis = getFrac1 - getFrac2;
+        double getFraction1 = exponent/r;
+        double getFraction2 = 1/r;
+        double getParenthesis = getFraction1 - getFraction2;
         this.FV = PMT * getParenthesis;
     }
     @Override
