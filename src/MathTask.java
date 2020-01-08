@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class MathTask {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -145,6 +146,5 @@ public class MathTask {
             default:
                 System.out.println("This is the end. More coming soon.");
         }
-
     }
 }
