@@ -140,9 +140,18 @@ public class MathTask {
                 }
 
             case 11:
-                System.out.println("C");
                 System.out.println("I");
-                System.out.println("Hello");
+                double I = sc.nextDouble();
+                System.out.println("C");
+                double C = sc.nextDouble();
+                System.out.println("G");
+                double G = sc.nextDouble();
+                System.out.println("X");
+                double X = sc.nextDouble();
+                System.out.println("n");
+                double N = sc.nextDouble();
+                MathTaskComicron MTC = new MathTaskComicron(I, C, G, X, N);
+                System.out.println(MTC);
 
             default:
                 System.out.println("This is the end. More coming soon.");
