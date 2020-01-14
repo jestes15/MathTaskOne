@@ -6,6 +6,6 @@ public class MathTaskComicron {
     }
     @Override
     public String toString() {
-        return "The GDP is" + getAnswer;
+        return "The GDP is " + getAnswer;
     }
 }
