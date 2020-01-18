@@ -153,6 +153,20 @@ public class MathTask {
                 MathTaskComicron MTC = new MathTaskComicron(I, C, G, X, N);
                 System.out.println(MTC);
 
+            case 12:
+                System.out.println("Function");
+                double y = sc.nextDouble();
+
+                if (y == 1) {
+                    double theta = 0;
+                    while (theta<360) {
+
+                        IntegralFunction IF = new sinValueFunction(theta);
+                        System.out.println("The integrated function is : " + theta);
+                        ++theta;
+                    }
+                }
+
             default:
                 System.out.println("This is the end. More coming soon.");
         }
