@@ -14,6 +14,7 @@ public class MathTask {
         System.out.println("9: Rule of 72");
         System.out.println("10: Credit Card Equation");
         System.out.println("11: Consumption");
+        System.out.println("12: Sine Function Table");
 
         int eqNum = sc.nextInt();
         switch(eqNum) {
@@ -159,10 +160,10 @@ public class MathTask {
 
                 if (y == 1) {
                     double theta = 0;
-                    while (theta<360) {
+                    while (theta<361) {
 
-                        IntegralFunction IF = new sinValueFunction(theta);
-                        System.out.println("The integrated function is : " + theta);
+                        sineValueFunction IF = new sineValueFunction(theta);
+                        System.out.println("The sine is " + theta + " : " + IF);
                         ++theta;
                     }
                 }
