@@ -156,17 +156,21 @@ public class MathTask {
 
             case 12:
                 System.out.println("Function");
-                double y = sc.nextDouble();
-
+                int y = sc.nextInt();
+                /*
                 if (y == 1) {
                     double theta = 0;
                     while (theta<361) {
 
                         sineValueFunction IF = new sineValueFunction(theta);
-                        System.out.println("The sine is " + theta + " : " + IF);
+                        System.out.println("The sine of " + theta + " degrees is " + IF);
                         ++theta;
                     }
                 }
+                */
+
+                sineValueFunction IF = new sineValueFunction(y);
+                System.out.println(IF);
 
             default:
                 System.out.println("This is the end. More coming soon.");
