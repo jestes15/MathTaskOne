@@ -155,20 +155,10 @@ public class MathTask {
                 System.out.println(MTC);
 
             case 12:
-                System.out.println("Function");
+                System.out.println("Input Case Value");
+                System.out.println("case 0 is a sine table");
+                System.out.println("case 1 is a cosine table");
                 int y = sc.nextInt();
-                /*
-                if (y == 1) {
-                    double theta = 0;
-                    while (theta<361) {
-
-                        sineValueFunction IF = new sineValueFunction(theta);
-                        System.out.println("The sine of " + theta + " degrees is " + IF);
-                        ++theta;
-                    }
-                }
-                */
-
                 sineValueFunction IF = new sineValueFunction(y);
                 System.out.println(IF);
 
