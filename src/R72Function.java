@@ -1,7 +1,7 @@
-public class MathTaskXi {
+public class R72Function {
     private double ruleOf72;
 
-    public MathTaskXi(double r) {
+    public R72Function(double r) {
         this.ruleOf72 = 72/r;
     }
     @Override

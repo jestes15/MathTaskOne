@@ -1,7 +1,7 @@
-public class MathTaskBeta {
+public class SimpleInterestFunction {
     private double SI;
 
-    public MathTaskBeta(double P, double r, double t) {
+    public SimpleInterestFunction(double P, double r, double t) {
         this.SI = P * r * t;
     }
     @Override

@@ -1,7 +1,7 @@
-public class MathTaskDelta {
+public class CashFlowFunction {
     private double  CashFlow;
 
-    public MathTaskDelta (double income, double expense) {
+    public CashFlowFunction(double income, double expense) {
         this.CashFlow = income - expense;
     }
     @Override
