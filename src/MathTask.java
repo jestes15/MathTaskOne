@@ -14,7 +14,7 @@ public class MathTask {
         System.out.println("9: Rule of 72");
         System.out.println("10: Credit Card Equation");
         System.out.println("11: Consumption");
-        System.out.println("12: Sine Function Table");
+        System.out.println("12: Sine/Cosine Function Table");
 
         int eqNum = sc.nextInt();
         switch(eqNum) {
