@@ -51,7 +51,7 @@ public class sineValueFunction {
                     ++intClass;
                 }
             default:
-
+                System.out.println(1);
         }
     }
 }

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class MathTask {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -15,6 +16,7 @@ public class MathTask {
         System.out.println("10: Credit Card Equation");
         System.out.println("11: Consumption");
         System.out.println("12: Sine/Cosine Function Table");
+        System.out.println("");
 
         int eqNum = sc.nextInt();
         switch(eqNum) {
@@ -162,9 +164,11 @@ public class MathTask {
                 sineValueFunction IF = new sineValueFunction(y);
                 System.out.println(IF);
 
-            default:
-                System.out.println("This is the end. More coming soon.");
-        }
+            case 13:
+                System.out.println("Physics Equation");
 
+            default:
+                System.out.println("Joshua Estes " + "\u00a9 2020");
+        }
     }
 }
