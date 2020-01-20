@@ -1,7 +1,7 @@
-public class MathTaskComicron {
+public class ConsumptionFunction {
     private double getAnswer;
 
-    public MathTaskComicron(double I, double C, double G, double X, double n) {
+    public ConsumptionFunction(double I, double C, double G, double X, double n) {
         this.getAnswer = C + I + G + X*n;
     }
     @Override

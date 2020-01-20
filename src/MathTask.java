@@ -29,7 +29,7 @@ public class MathTask {
                 System.out.println("t");
                 double t = sc.nextDouble();
 
-                MathTaskAlpha MTA = new MathTaskAlpha(r, P, n, t);
+                AmmortizationFunction MTA = new AmmortizationFunction(r, P, n, t);
                 System.out.println(MTA);
 
             case 2:
@@ -40,7 +40,7 @@ public class MathTask {
                 System.out.println("t");
                 double t1 = sc.nextDouble();
 
-                MathTaskBeta MTB = new MathTaskBeta(P1, r1, t1);
+                SimpleInterestFunction MTB = new SimpleInterestFunction(P1, r1, t1);
                 System.out.println(MTB);
 
             case 3:
@@ -53,7 +53,7 @@ public class MathTask {
                 System.out.println("t");
                 double t2 = sc.nextDouble();
 
-                MathTaskGamma MTG = new MathTaskGamma(P2, r2, n2, t2);
+                CompoundInterestFunction MTG = new CompoundInterestFunction(P2, r2, n2, t2);
                 System.out.println(MTG);
 
             case 4:
@@ -62,7 +62,7 @@ public class MathTask {
                 System.out.println("Expense");
                 double expense = sc.nextDouble();
 
-                MathTaskDelta MTD = new MathTaskDelta(income, expense);
+                CashFlowFunction MTD = new CashFlowFunction(income, expense);
                 System.out.println(MTD);
 
             case 5:
@@ -73,7 +73,7 @@ public class MathTask {
                 System.out.println("t");
                 double t3 = sc.nextDouble();
 
-                MathTaskEpsilon MTE = new MathTaskEpsilon(PMT, r3, t3);
+                PVOAFunction MTE = new PVOAFunction(PMT, r3, t3);
                 System.out.println(MTE);
 
             case 6:
@@ -84,7 +84,7 @@ public class MathTask {
                 System.out.println("t4");
                 double t4 = sc.nextDouble();
 
-                MathTaskZeta MTZ = new MathTaskZeta(PMT1, r4, t4);
+                FVOAFunction MTZ = new FVOAFunction(PMT1, r4, t4);
                 System.out.println(MTZ);
 
             case 7:
@@ -95,7 +95,7 @@ public class MathTask {
                 System.out.println("t");
                 double t5 = sc.nextDouble();
 
-                MathTaskTheta MTT = new MathTaskTheta(EV, BV, t5);
+                CAGRFunction MTT = new CAGRFunction(EV, BV, t5);
                 System.out.println(MTT);
 
             case 8:
@@ -106,14 +106,14 @@ public class MathTask {
                 System.out.println("Total Income");
                 double TI = sc.nextDouble();
 
-                MathTaskIota MTI = new MathTaskIota(TL, TD, TI);
+                LeverageRatioFunction MTI = new LeverageRatioFunction(TL, TD, TI);
                 System.out.println(MTI);
 
             case 9:
                 System.out.println("r");
                 double r5 = sc.nextDouble();
 
-                MathTaskXi MTX = new MathTaskXi(r5);
+                R72Function MTX = new R72Function(r5);
                 System.out.println(MTX);
 
             case 10:
@@ -129,14 +129,14 @@ public class MathTask {
                     System.out.println("Interest rate");
                     double i = sc.nextDouble();
 
-                    MathTaskOmicron MTO = new MathTaskOmicron(b, p, i);
+                    CCEIRFunction MTO = new CCEIRFunction(b, p, i);
                     System.out.println(MTO);
                 }
                 if (Ans == 0) {
                     System.out.println("APR");
                     double APR = sc.nextDouble();
 
-                    MathTaskPsi MTP = new MathTaskPsi(b, p, APR);
+                    CCEAPRFunction MTP = new CCEAPRFunction(b, p, APR);
                     System.out.println(MTP);
                 }
 
@@ -151,7 +151,7 @@ public class MathTask {
                 double X = sc.nextDouble();
                 System.out.println("n");
                 double N = sc.nextDouble();
-                MathTaskComicron MTC = new MathTaskComicron(I, C, G, X, N);
+                ConsumptionFunction MTC = new ConsumptionFunction(I, C, G, X, N);
                 System.out.println(MTC);
 
             case 12:

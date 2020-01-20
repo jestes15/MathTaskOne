@@ -1,10 +1,11 @@
-public class MathTaskOmicron {
+public class CCEAPRFunction {
     private double N;
 
-    public MathTaskOmicron(double b, double p, double i) {
+    public CCEAPRFunction(double b, double p, double APR) {
+        double i = APR/365;
         double getInnermostParenthesis = Math.pow(1 + i, 30);
         double getMiddleParenthesis = (b/p) * (1 - getInnermostParenthesis);
-        double getWholeParenthesis = ++getMiddleParenthesis;
+        double getWholeParenthesis = 1 + getMiddleParenthesis;
         double getNumerator = Math.log(getWholeParenthesis);
         double getDenominator = Math.log(1 + i);
         double u = 1;

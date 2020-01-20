@@ -1,11 +1,10 @@
-public class MathTaskPsi {
+public class CCEIRFunction {
     private double N;
 
-    public MathTaskPsi(double b, double p, double APR) {
-        double i = APR/365;
+    public CCEIRFunction(double b, double p, double i) {
         double getInnermostParenthesis = Math.pow(1 + i, 30);
         double getMiddleParenthesis = (b/p) * (1 - getInnermostParenthesis);
-        double getWholeParenthesis = 1 + getMiddleParenthesis;
+        double getWholeParenthesis = ++getMiddleParenthesis;
         double getNumerator = Math.log(getWholeParenthesis);
         double getDenominator = Math.log(1 + i);
         double u = 1;

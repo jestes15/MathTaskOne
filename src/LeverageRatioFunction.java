@@ -1,7 +1,7 @@
-public class MathTaskIota {
+public class LeverageRatioFunction {
     private double LevRatio;
 
-    public MathTaskIota(double TL, double TD, double TI) {
+    public LeverageRatioFunction(double TL, double TD, double TI) {
         double Numerator = TL + TD;
         this.LevRatio = Numerator/TI;
     }

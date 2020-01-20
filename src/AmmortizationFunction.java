@@ -1,7 +1,7 @@
-public class MathTaskAlpha {
+public class AmmortizationFunction {
     private double A;
 
-    public MathTaskAlpha(double r, double P, double n, double t) {
+    public AmmortizationFunction(double r, double P, double n, double t) {
         double calcNum = r * P;
         double calcParent = 1 + (r / n);
         double exp = -(n * t);

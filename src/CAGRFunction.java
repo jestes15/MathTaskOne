@@ -1,7 +1,7 @@
-public class MathTaskTheta {
+public class CAGRFunction {
     private double CAGR;
 
-    public MathTaskTheta(double EV, double BV, double t) {
+    public CAGRFunction(double EV, double BV, double t) {
         double getFraction = EV/BV;
         double getExpFraction = 1/t;
         double Exponential = Math.pow(getFraction, getExpFraction);

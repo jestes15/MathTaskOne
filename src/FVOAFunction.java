@@ -1,7 +1,7 @@
-public class MathTaskZeta {
+public class FVOAFunction {
     private double FV;
 
-    public MathTaskZeta(double PMT, double r, double t) {
+    public FVOAFunction(double PMT, double r, double t) {
         double exponent = Math.pow((1 + r), t);
         double getFraction1 = exponent/r;
         double getFraction2 = 1/r;

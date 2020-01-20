@@ -1,7 +1,7 @@
-public class MathTaskGamma {
+public class CompoundInterestFunction {
     private double AmntAcc;
 
-    public MathTaskGamma(double P, double r, double n, double t) {
+    public CompoundInterestFunction(double P, double r, double n, double t) {
         double getParenthesis = 1 + (r/n);
         double getExponent = Math.pow(getParenthesis, n*t);
         this.AmntAcc = P * getExponent;
