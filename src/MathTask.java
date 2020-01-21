@@ -16,7 +16,7 @@ public class MathTask {
         System.out.println("10: Credit Card Equation");
         System.out.println("11: Consumption");
         System.out.println("12: Sine/Cosine Function Table");
-        System.out.println("");
+        System.out.println("Hyperskill test");
 
         int eqNum = sc.nextInt();
         switch(eqNum) {
@@ -165,7 +165,7 @@ public class MathTask {
                 System.out.println(IF);
 
             case 13:
-                System.out.println("Physics Equation");
+                System.out.print("Physics");
 
             default:
                 System.out.println("Joshua Estes " + "\u00a9 2020");
