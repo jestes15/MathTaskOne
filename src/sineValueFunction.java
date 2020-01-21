@@ -1,4 +1,5 @@
 public class sineValueFunction {
+
     public sineValueFunction(int theta) {
         if (theta == 0) {
             int iClass = 0;
