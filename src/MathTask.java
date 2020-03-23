@@ -160,13 +160,26 @@ public class MathTask {
                 System.out.println("Input Case Value");
                 System.out.println("case 0 is a sine table");
                 System.out.println("case 1 is a cosine table");
+
                 int y = sc.nextInt();
                 sineValueFunction IF = new sineValueFunction(y);
                 System.out.println(IF);
 
             case 13:
-                int K = sc.nextInt();
-                PhysicsConstants PC = new PhysicsConstants(K);
+                System.out.println("0: Atomic Mass Constant");
+                System.out.println("1: Avogadro's Number");
+                System.out.println("2: Boltzmann Constant");
+                System.out.println("3: Electron Charge");
+                System.out.println("4: Faraday Constant");
+                System.out.println("5: Gas Constant");
+                System.out.println("6: Mass of an Electron");
+                System.out.println("7: Mass of a Neutron");
+                System.out.println("8: Mass of a Proton");
+                System.out.println("9: Plank Constant");
+                System.out.println("10: Speed of Light in a Vacuum");
+
+                int getInteger = sc.nextInt();
+                PhysicsConstants PC = new PhysicsConstants(getInteger);
                 System.out.println(PC);
 
             default:
