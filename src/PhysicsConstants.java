@@ -1,12 +1,8 @@
-import java.util.Scanner;
-
 public class PhysicsConstants {
     private double G;
     private String H;
 
     public PhysicsConstants(int getInteger) {
-        Scanner sc = new Scanner(System.in);
-
         if (getInteger == 0) {
             this.G = 1.660539040 * Math.pow(10, -27);
             this.H = "kg";
@@ -28,18 +24,14 @@ public class PhysicsConstants {
             this.H = "C/mol";
         }
         if (getInteger == 5) {
-            System.out.println("a1: Gas Constant in terms of L-atm/mol-K");
-            System.out.println("a2: Gas Constant in terms of J/mol-K");
-            String getChoice = sc.next();
-            if (getChoice == "a1") {
-                this.G = 0.0820582;
-                this.H = "L-atm/mol-K";
-            }
-            if (getChoice == "a2") {
-                this.G = 9.3144598;
-                this.H = "J/mol-K";
-            }
+            this.G = 0.0820582;
+            this.H = "L-atm/mol-K";
         }
+        if (getInteger == 6) {
+            this.G = 8.3144598;
+            this.H = "J/mol-K";
+        }
+
 
     }
     public String toString() {

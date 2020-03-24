@@ -16,7 +16,7 @@ public class MathTask {
         System.out.println("10: Credit Card Equation");
         System.out.println("11: Consumption");
         System.out.println("12: Sine/Cosine Function Table");
-        System.out.println("Hyper skill test");
+        System.out.println("13: Physics Constants");
 
         int eqNum = sc.nextInt();
         switch(eqNum) {
@@ -171,12 +171,13 @@ public class MathTask {
                 System.out.println("2: Boltzmann Constant");
                 System.out.println("3: Electron Charge");
                 System.out.println("4: Faraday Constant");
-                System.out.println("5: Gas Constant");
-                System.out.println("6: Mass of an Electron");
-                System.out.println("7: Mass of a Neutron");
-                System.out.println("8: Mass of a Proton");
-                System.out.println("9: Plank Constant");
-                System.out.println("10: Speed of Light in a Vacuum");
+                System.out.println("5: Gas Constant in L-atm/mol-K");
+                System.out.println("6: Gas Constant in J/mol-K");
+                System.out.println("7: Mass of an Electron");
+                System.out.println("8: Mass of a Neutron");
+                System.out.println("9: Mass of a Proton");
+                System.out.println("10: Plank Constant");
+                System.out.println("11: Speed of Light in a Vacuum");
 
                 int getInteger = sc.nextInt();
                 PhysicsConstants PC = new PhysicsConstants(getInteger);
