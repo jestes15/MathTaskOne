@@ -173,11 +173,14 @@ public class MathTask {
                 System.out.println("4: Faraday Constant");
                 System.out.println("5: Gas Constant in L-atm/mol-K");
                 System.out.println("6: Gas Constant in J/mol-K");
-                System.out.println("7: Mass of an Electron");
-                System.out.println("8: Mass of a Neutron");
-                System.out.println("9: Mass of a Proton");
-                System.out.println("10: Plank Constant");
-                System.out.println("11: Speed of Light in a Vacuum");
+                System.out.println("7: Mass of an Electron in amu");
+                System.out.println("8: Mass of an Electron in kg");
+                System.out.println("9: Mass of a Neutron in amu");
+                System.out.println("10: Mass of a Neutron in kg");
+                System.out.println("11: Mass of a Proton in amu");
+                System.out.println("12: Mass of a Proton in kg");
+                System.out.println("13: Plank Constant");
+                System.out.println("14: Speed of Light in a Vacuum");
 
                 int getInteger = sc.nextInt();
                 PhysicsConstants PC = new PhysicsConstants(getInteger);

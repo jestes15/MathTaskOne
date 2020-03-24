@@ -31,7 +31,9 @@ public class PhysicsConstants {
             this.G = 8.3144598;
             this.H = "J/mol-K";
         }
-
+        if (getInteger == 7) {
+            this.G =
+        }
 
     }
     public String toString() {
