@@ -181,6 +181,10 @@ public class MathTask {
                 System.out.println("12: Mass of a Proton in kg");
                 System.out.println("13: Plank Constant");
                 System.out.println("14: Speed of Light in a Vacuum");
+                System.out.println("15: Gravitational Constant");
+                System.out.println("16: Magnetic Constant");
+                System.out.println("17: Electric Constant in terms of C^2/N-m^2");
+                System.out.println("18: Electric Constant in terms of N-m^2/C^2");
 
                 int getInteger = sc.nextInt();
                 PhysicsConstants PC = new PhysicsConstants(getInteger);

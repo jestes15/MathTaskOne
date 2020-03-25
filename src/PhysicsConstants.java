@@ -9,7 +9,7 @@ public class PhysicsConstants {
         }
         if (getInteger == 1) {
             this.G = 6.022140859 * Math.pow(10, 23);
-            this.H = "molE-1";
+            this.H = "1/mol";
         }
         if (getInteger == 2) {
             this.G = 1.3806485 * Math.pow(10, -23);
@@ -55,8 +55,30 @@ public class PhysicsConstants {
             this.G = 1.672621898 * Math.pow(10, -27);
             this.H = "kg";
         }
-
-
+        if (getInteger == 13) {
+            this.G = 6.626070040 * Math.pow(10, -34);
+            this.H = "J-s";
+        }
+        if (getInteger == 14) {
+            this.G = 2.99792458 * Math.pow(10, 8);
+            this.H = "m/s";
+        }
+        if (getInteger == 15) {
+            this.G = 6.67384 * Math.pow(10, -11);
+            this.H = "N-m^2/kg^2";
+        }
+        if (getInteger == 16) {
+            this.G = (4 * Math.PI) * Math.pow(10,-7);
+            this.H = "Wb/A-m";
+        }
+        if (getInteger == 17) {
+            this.G = 8.854187817 * Math.pow(10, -12);
+            this.H = "C^2/N-m^2";
+        }
+        if (getInteger == 18) {
+            this.G = 8.987551787 * Math.pow(10, 9);
+            this.H = "N-m^2/C^2";
+        }
     }
     public String toString() {
         return "The Value of the constant you chose is " + G + " " + H;
