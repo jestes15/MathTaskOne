@@ -39,6 +39,22 @@ public class PhysicsConstants {
             this.G = 9.10938356 * Math.pow(10, -31);
             this.H = "kg";
         }
+        if (getInteger == 9) {
+            this.G = 1.008664916;
+            this.H = "amu";
+        }
+        if (getInteger == 10) {
+            this.G = 1.674927471 * Math.pow(10, -27);
+            this.H = "kg";
+        }
+        if (getInteger == 11) {
+            this.G = 1.007276466;
+            this.H = "amu";
+        }
+        if (getInteger == 12) {
+            this.G = 1.672621898 * Math.pow(10, -27);
+            this.H = "kg";
+        }
 
 
     }
