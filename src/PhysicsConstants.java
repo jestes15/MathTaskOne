@@ -32,8 +32,14 @@ public class PhysicsConstants {
             this.H = "J/mol-K";
         }
         if (getInteger == 7) {
-            this.G =
+            this.G = 5.4857990946 * Math.pow(10, -4);
+            this.H = "amu";
         }
+        if (getInteger == 8) {
+            this.G = 9.10938356 * Math.pow(10, -31);
+            this.H = "kg";
+        }
+
 
     }
     public String toString() {
