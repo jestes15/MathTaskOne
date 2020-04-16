@@ -196,8 +196,15 @@ public class MathTask {
                 CreateFile CF = new CreateFile(getName);
                 System.out.println(CF);
 
+            case 15:
+                String getNameOfFile = sc.next();
+                String getWrite = sc.next();
+                WriteFile RF = new WriteFile(getWrite, getNameOfFile);
+                System.out.println(RF);
+
+
             default:
-                System.out.println("An unhandled error has occurred");
+                System.out.println("No more options");
 
         }
     }

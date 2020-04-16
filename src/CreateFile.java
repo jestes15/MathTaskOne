@@ -4,7 +4,7 @@ public class CreateFile {
 
     public CreateFile(String getName) {
         try {
-            File myOBJ = new File("C:\\Users\\The Estes Family\\IdeaProjects\\MathTaskOne\\TEST-FILES\\" + getName + ".txt");
+            File myOBJ = new File(System.getProperty("user.dir") + "\\TEST-FILES\\" + getName + ".txt");
                 if (myOBJ.createNewFile()) {
                 System.out.println("File Created: " +  myOBJ.getName());
             }
