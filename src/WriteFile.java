@@ -10,7 +10,9 @@ public class WriteFile {
         String path = System.getProperty("user.dir") + "\\TEST-FILES\\" + getNameOfFile + ".txt";
 
         try {
-            Files.write(Paths.get(path), getWrite.getBytes(), StandardOpenOption.APPEND);
+            FileWriter fw = new FileWriter(path, true);
+            fw.write(getWrite);
+            fw.close();
             System.out.println("Successfully wrote to the file.");
         }
         catch (IOException e) {

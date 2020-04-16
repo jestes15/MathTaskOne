@@ -198,7 +198,8 @@ public class MathTask {
 
             case 15:
                 String getNameOfFile = sc.next();
-                String getWrite = sc.next();
+                //String getWrite = sc.next();
+                String getWrite = "Hello, I am testing";
                 WriteFile RF = new WriteFile(getWrite, getNameOfFile);
                 System.out.println(RF);
 
