@@ -193,26 +193,10 @@ public class MathTask {
 
             case 14:
                 String getName = sc.next();
-                CreateFile CF = new CreateFile(getName);
+                String getPath = sc.next();
+                CreateFile CF = new CreateFile(getName, getPath);
                 System.out.println(CF);
-/*
-                try {
-                    File myOBJ = new File(getName + ".txt");
-                    if (myOBJ.createNewFile()) {
-                        System.out.println("File Created: " +  myOBJ.getName());
-                    }
-                    else {
-                        System.out.println("File already exists.");
-                    }
-                }
-                catch (IOException e) {
-                    System.out.println("An error occurred");
-                    e.printStackTrace();
-                }
 
-            default:
-                System.out.println("Joshua Estes " + "\u00a9 2020");
-                */
         }
     }
 }
