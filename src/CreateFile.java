@@ -5,7 +5,7 @@ public class CreateFile {
     public CreateFile(String getName) {
         try {
             File myOBJ = new File(System.getProperty("user.dir") + "\\TEST-FILES\\" + getName + ".txt");
-                if (myOBJ.createNewFile()) {
+            if (myOBJ.createNewFile()) {
                 System.out.println("File Created: " +  myOBJ.getName());
             }
             else {

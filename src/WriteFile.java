@@ -13,7 +13,7 @@ public class WriteFile {
             FileWriter fw = new FileWriter(path, true);
             fw.write(getWrite);
             fw.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("Successfully wrote to " + getNameOfFile + ".txt.");
         }
         catch (IOException e) {
             System.out.println("An error occurred.");

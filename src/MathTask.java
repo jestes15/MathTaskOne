@@ -1,9 +1,12 @@
-import java.util.Scanner;
+import java.util.*;
 import java.io.*;
 
 public class MathTask {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
         Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         System.out.println("Input eq number");
         System.out.println("1: Amortization");
         System.out.println("2: Simple Interest");
@@ -35,6 +38,8 @@ public class MathTask {
                 AmmortizationFunction MTA = new AmmortizationFunction(r, P, n, t);
                 System.out.println(MTA);
 
+                break;
+
             case 2:
                 System.out.println("P");
                 double P1 = sc.nextDouble();
@@ -45,6 +50,8 @@ public class MathTask {
 
                 SimpleInterestFunction MTB = new SimpleInterestFunction(P1, r1, t1);
                 System.out.println(MTB);
+
+                break;
 
             case 3:
                 System.out.println("P");
@@ -59,6 +66,8 @@ public class MathTask {
                 CompoundInterestFunction MTG = new CompoundInterestFunction(P2, r2, n2, t2);
                 System.out.println(MTG);
 
+                break;
+
             case 4:
                 System.out.println("Income");
                 double income = sc.nextDouble();
@@ -67,6 +76,8 @@ public class MathTask {
 
                 CashFlowFunction MTD = new CashFlowFunction(income, expense);
                 System.out.println(MTD);
+
+                break;
 
             case 5:
                 System.out.println("PMT");
@@ -79,6 +90,8 @@ public class MathTask {
                 PVOAFunction MTE = new PVOAFunction(PMT, r3, t3);
                 System.out.println(MTE);
 
+                break;
+
             case 6:
                 System.out.println("PMT");
                 double PMT1 =sc.nextDouble();
@@ -89,6 +102,8 @@ public class MathTask {
 
                 FVOAFunction MTZ = new FVOAFunction(PMT1, r4, t4);
                 System.out.println(MTZ);
+
+                break;
 
             case 7:
                 System.out.println("Ending Value");
@@ -101,6 +116,8 @@ public class MathTask {
                 CAGRFunction MTT = new CAGRFunction(EV, BV, t5);
                 System.out.println(MTT);
 
+                break;
+
             case 8:
                 System.out.println("Total Liabilities");
                 double TL = sc.nextDouble();
@@ -112,12 +129,16 @@ public class MathTask {
                 LeverageRatioFunction MTI = new LeverageRatioFunction(TL, TD, TI);
                 System.out.println(MTI);
 
+                break;
+
             case 9:
                 System.out.println("r");
                 double r5 = sc.nextDouble();
 
                 R72Function MTX = new R72Function(r5);
                 System.out.println(MTX);
+
+                break;
 
             case 10:
                 System.out.println("Balance");
@@ -143,6 +164,8 @@ public class MathTask {
                     System.out.println(MTP);
                 }
 
+                break;
+
             case 11:
                 System.out.println("I");
                 double I = sc.nextDouble();
@@ -157,6 +180,8 @@ public class MathTask {
                 ConsumptionFunction MTC = new ConsumptionFunction(I, C, G, X, N);
                 System.out.println(MTC);
 
+                break;
+
             case 12:
                 System.out.println("Input Case Value");
                 System.out.println("case 0 is a sine table");
@@ -165,6 +190,8 @@ public class MathTask {
                 int y = sc.nextInt();
                 sineValueFunction IF = new sineValueFunction(y);
                 System.out.println(IF);
+
+                break;
 
             case 13:
                 System.out.println("0: Atomic Mass Constant");
@@ -191,18 +218,25 @@ public class MathTask {
                 PhysicsConstants PC = new PhysicsConstants(getInteger);
                 System.out.println(PC);
 
+                break;
+
             case 14:
                 String getName = sc.next();
                 CreateFile CF = new CreateFile(getName);
                 System.out.println(CF);
 
+                break;
+
             case 15:
                 String getNameOfFile = sc.next();
-                //String getWrite = sc.next();
-                String getWrite = "Hello, I am testing";
+                String getWrite = br.readLine();
+
+                System.out.println(getWrite);
+
                 WriteFile RF = new WriteFile(getWrite, getNameOfFile);
                 System.out.println(RF);
 
+                break;
 
             default:
                 System.out.println("No more options");
