@@ -193,9 +193,11 @@ public class MathTask {
 
             case 14:
                 String getName = sc.next();
-                String getPath = sc.next();
-                CreateFile CF = new CreateFile(getName, getPath);
+                CreateFile CF = new CreateFile(getName);
                 System.out.println(CF);
+
+            default:
+                System.out.println("An unhandled error has occurred");
 
         }
     }
