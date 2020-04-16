@@ -222,7 +222,10 @@ public class MathTask {
 
             case 14:
                 String getName = sc.next();
-                CreateFile CF = new CreateFile(getName);
+                System.out.println("Directory input should be in the form of \\Folder\\");
+                String getDir = sc.next();
+
+                CreateFile CF = new CreateFile(getName, getDir);
                 System.out.println(CF);
 
                 break;

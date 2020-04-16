@@ -2,9 +2,9 @@ import java.io.*;
 
 public class CreateFile {
 
-    public CreateFile(String getName) {
+    public CreateFile(String getName, String getDir) {
         try {
-            File myOBJ = new File(System.getProperty("user.dir") + "\\TEST-FILES\\" + getName + ".txt");
+            File myOBJ = new File(System.getProperty("user.dir") + getDir + getName + ".txt");
             if (myOBJ.createNewFile()) {
                 System.out.println("File Created: " +  myOBJ.getName());
             }
