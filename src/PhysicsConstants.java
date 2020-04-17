@@ -1,86 +1,105 @@
 public class PhysicsConstants {
-    private double G;
-    private String H;
 
     public PhysicsConstants(int getInteger) {
+        double g;
+        String h;
         if (getInteger == 0) {
-            this.G = 1.660539040 * Math.pow(10, -27);
-            this.H = "kg";
+            g = 1.660539040 * Math.pow(10, -27);
+            h = "kg";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 1) {
-            this.G = 6.022140859 * Math.pow(10, 23);
-            this.H = "1/mol";
+            g = 6.022140859 * Math.pow(10, 23);
+            h = "1/mol";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 2) {
-            this.G = 1.3806485 * Math.pow(10, -23);
-            this.H = "J/K";
+            g = 1.3806485 * Math.pow(10, -23);
+            h = "J/K";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 3) {
-            this.G = 1.6021766208 * Math.pow(10, -19);
-            this.H = "C";
+            g = 1.6021766208 * Math.pow(10, -19);
+            h = "C";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 4) {
-            this.G = 9.648533289 * Math.pow(10, 4);
-            this.H = "C/mol";
+            g = 9.648533289 * Math.pow(10, 4);
+            h = "C/mol";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 5) {
-            this.G = 0.0820582;
-            this.H = "L-atm/mol-K";
+            g = 0.0820582;
+            h = "L-atm/mol-K";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 6) {
-            this.G = 8.3144598;
-            this.H = "J/mol-K";
+            g = 8.3144598;
+            h = "J/mol-K";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 7) {
-            this.G = 5.4857990946 * Math.pow(10, -4);
-            this.H = "amu";
+            g = 5.4857990946 * Math.pow(10, -4);
+            h = "amu";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 8) {
-            this.G = 9.10938356 * Math.pow(10, -31);
-            this.H = "kg";
+            g = 9.10938356 * Math.pow(10, -31);
+            h = "kg";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 9) {
-            this.G = 1.008664916;
-            this.H = "amu";
+            g = 1.008664916;
+            h = "amu";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 10) {
-            this.G = 1.674927471 * Math.pow(10, -27);
-            this.H = "kg";
+            g = 1.674927471 * Math.pow(10, -27);
+            h = "kg";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 11) {
-            this.G = 1.007276466;
-            this.H = "amu";
+            g = 1.007276466;
+            h = "amu";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 12) {
-            this.G = 1.672621898 * Math.pow(10, -27);
-            this.H = "kg";
+            g = 1.672621898 * Math.pow(10, -27);
+            h = "kg";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 13) {
-            this.G = 6.626070040 * Math.pow(10, -34);
-            this.H = "J-s";
+            g = 6.626070040 * Math.pow(10, -34);
+            h = "J-s";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 14) {
-            this.G = 2.99792458 * Math.pow(10, 8);
-            this.H = "m/s";
+            g = 2.99792458 * Math.pow(10, 8);
+            h = "m/s";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 15) {
-            this.G = 6.67384 * Math.pow(10, -11);
-            this.H = "N-m^2/kg^2";
+            g = 6.67384 * Math.pow(10, -11);
+            h = "N-m^2/kg^2";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 16) {
-            this.G = (4 * Math.PI) * Math.pow(10,-7);
-            this.H = "Wb/A-m";
+            g = (4 * Math.PI) * Math.pow(10,-7);
+            h = "Wb/A-m";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 17) {
-            this.G = 8.854187817 * Math.pow(10, -12);
-            this.H = "C^2/N-m^2";
+            g = 8.854187817 * Math.pow(10, -12);
+            h = "C^2/N-m^2";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
         if (getInteger == 18) {
-            this.G = 8.987551787 * Math.pow(10, 9);
-            this.H = "N-m^2/C^2";
+            g = 8.987551787 * Math.pow(10, 9);
+            h = "N-m^2/C^2";
+            System.out.println("The Value of the constant you chose is " + g + " " + h);
         }
-    }
-    public String toString() {
-        return "The Value of the constant you chose is " + G + " " + H;
+        else {
+            System.out.println("ERROR : OPTION NOT VALID");
+        }
     }
 }
