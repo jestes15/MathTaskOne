@@ -232,11 +232,13 @@ public class MathTask {
 
             case 15:
                 String getNameOfFile = sc.next();
+                System.out.println("Directory input should be in the form of \\Folder\\");
+                String getDirectory = sc.next();
                 String getWrite = br.readLine();
 
                 System.out.println(getWrite);
 
-                WriteFile RF = new WriteFile(getWrite, getNameOfFile);
+                WriteFile RF = new WriteFile(getWrite, getDirectory, getNameOfFile);
                 System.out.println(RF);
 
                 break;

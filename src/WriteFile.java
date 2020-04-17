@@ -1,13 +1,12 @@
 import java.io.*;
-import java.nio.file.*;
 import java.util.Scanner;
 
 public class WriteFile {
 
-    public WriteFile(String getWrite, String getNameOfFile) {
+    public WriteFile(String getWrite, String getDirectory, String getNameOfFile) {
         Scanner sc = new Scanner(System.in);
 
-        String path = System.getProperty("user.dir") + "\\TEST-FILES\\" + getNameOfFile + ".txt";
+        String path = System.getProperty("user.dir") + getDirectory + getNameOfFile + ".txt";
 
         try {
             FileWriter fw = new FileWriter(path, true);
