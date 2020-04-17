@@ -41,11 +41,11 @@ public class MathTask {
                 break;
 
             case 2:
-                System.out.println("P");
+                System.out.println("Principle");
                 double P1 = sc.nextDouble();
-                System.out.println("r");
+                System.out.println("Interest rate (decimal)");
                 double r1 = sc.nextDouble();
-                System.out.println("t");
+                System.out.println("Time (year)");
                 double t1 = sc.nextDouble();
 
                 SimpleInterestFunction MTB = new SimpleInterestFunction(P1, r1, t1);
@@ -212,7 +212,7 @@ public class MathTask {
                 System.out.println("15: Gravitational Constant");
                 System.out.println("16: Magnetic Constant");
                 System.out.println("17: Electric Constant in terms of C^2/N-m^2");
-                System.out.println("18: Electric Constant in terms of N-m^2/C^2");
+                System.out.println("18: Electr1ic Constant in terms of N-m^2/C^2");
 
                 int getInteger = sc.nextInt();
                 PhysicsConstants PC = new PhysicsConstants(getInteger);
@@ -221,6 +221,7 @@ public class MathTask {
                 break;
 
             case 14:
+                System.out.println("Name of file");
                 String getName = sc.next();
                 System.out.println("Directory input should be in the form of \\Folder\\");
                 String getDir = sc.next();
