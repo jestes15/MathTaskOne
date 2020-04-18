@@ -21,6 +21,8 @@ public class MathTask {
         System.out.println("11: Consumption");
         System.out.println("12: Sine/Cosine Function Table");
         System.out.println("13: Physics Constants");
+        System.out.println("14: Creates a new file within the parameters defined");
+        System.out.println("15: Appends the file stated");
 
         int eqNum = sc.nextInt();
         switch(eqNum) {
@@ -35,7 +37,7 @@ public class MathTask {
                 System.out.println("t");
                 double t = sc.nextDouble();
 
-                AmmortizationFunction MTA = new AmmortizationFunction(r, P, n, t);
+                AmortizationFunction MTA = new AmortizationFunction(r, P, n, t);
                 System.out.println(MTA);
 
                 break;
@@ -248,5 +250,180 @@ public class MathTask {
                 System.out.println("No more options");
 
         }
+    }
+}
+
+class AmortizationFunction {
+    private final double A;
+
+    public AmortizationFunction(double r, double P, double n, double t) {
+        double calcNum = r * P;
+        double calcParent = 1 + (r / n);
+        double exp = -(n * t);
+        double calcBracket = 1 - Math.pow(calcParent, exp);
+        double calcDenominator = n * calcBracket;
+        this.A = calcNum / calcDenominator;
+    }
+    @Override
+    public String toString() { return "A = " + A; }
+}
+
+class CAGRFunction {
+    private final double CAGR;
+
+    public CAGRFunction(double EV, double BV, double t) {
+        double getFraction = EV/BV;
+        double getExpFraction = 1/t;
+        double Exponential = Math.pow(getFraction, getExpFraction);
+        this.CAGR = Exponential - 1;
+    }
+    public String toString() {
+        return "The Compound Annual Growth Rate is " + CAGR;
+    }
+}
+
+class CashFlowFunction {
+    private final double CashFlow;
+
+    public CashFlowFunction(double income, double expense) {
+        this.CashFlow = income - expense;
+    }
+    @Override
+    public String toString() {
+        return "The Cash Flow is " + CashFlow;
+    }
+}
+
+class CCEAPRFunction {
+    private final double N;
+
+    public CCEAPRFunction(double b, double p, double APR) {
+        double i = APR/365;
+        double getInnermostParenthesis = Math.pow(1 + i, 30);
+        double getMiddleParenthesis = (b/p) * (1 - getInnermostParenthesis);
+        double getWholeParenthesis = 1 + getMiddleParenthesis;
+        double getNumerator = Math.log(getWholeParenthesis);
+        double getDenominator = Math.log(1 + i);
+        double u = 1;
+        double getProduct = -u/30;
+        this.N = getProduct * (getNumerator/getDenominator);
+    }
+    @Override
+    public String toString() {
+        return "It will take " + N + " years to pay off your credit card.";
+    }
+}
+
+class CCEIRFunction {
+    private final double N;
+
+    public CCEIRFunction(double b, double p, double i) {
+        double getInnermostParenthesis = Math.pow(1 + i, 30);
+        double getMiddleParenthesis = (b/p) * (1 - getInnermostParenthesis);
+        double getWholeParenthesis = ++getMiddleParenthesis;
+        double getNumerator = Math.log(getWholeParenthesis);
+        double getDenominator = Math.log(1 + i);
+        double u = 1;
+        double getProduct = -u/30;
+        this.N = getProduct * (getNumerator/getDenominator);
+    }
+    @Override
+    public String toString() {
+        return "It will take " + N + " years to pay off your credit card.";
+    }
+}
+
+class CompoundInterestFunction {
+    private final double AmntAcc;
+
+    public CompoundInterestFunction(double P, double r, double n, double t) {
+        double getParenthesis = 1 + (r/n);
+        double getExponent = Math.pow(getParenthesis, n*t);
+        this.AmntAcc = P * getExponent;
+    }
+    @Override
+    public String toString() {
+        return "Amount Accumulated is " + AmntAcc;
+    }
+}
+
+class ConsumptionFunction {
+    private final double getAnswer;
+
+    public ConsumptionFunction(double I, double C, double G, double X, double n) {
+        this.getAnswer = C + I + G + X*n;
+    }
+    @Override
+    public String toString() {
+        return "The GDP is " + getAnswer;
+    }
+}
+
+class FVOAFunction {
+    private final double FV;
+
+    public FVOAFunction(double PMT, double r, double t) {
+        double exponent = Math.pow((1 + r), t);
+        double getFraction1 = exponent/r;
+        double getFraction2 = 1/r;
+        double getParenthesis = getFraction1 - getFraction2;
+        this.FV = PMT * getParenthesis;
+    }
+    @Override
+    public String toString() {
+        return "The Future Value of an Ordinary Annuity is " + FV;
+    }
+}
+
+class LeverageRatioFunction {
+    private final double LevRatio;
+
+    public LeverageRatioFunction(double TL, double TD, double TI) {
+        double Numerator = TL + TD;
+        this.LevRatio = Numerator/TI;
+    }
+    @Override
+    public String toString() {
+        return "The Leverage Ratio is " + LevRatio;
+    }
+}
+
+class PVOAFunction {
+    private final double PV;
+
+    public PVOAFunction(double PMT, double r, double t) {
+        double getFractionOne = 1/r;
+        double getFractionTwo = 1/(r * Math.pow((1 + r), t));
+        double getParenthesis = getFractionOne - getFractionTwo;
+        this.PV = PMT * getParenthesis;
+    }
+
+    @Override
+    public String toString() {
+        return "The Present Value is " + PV;
+    }
+}
+
+class R72Function {
+    private final double ruleOf72;
+
+    public R72Function(double r) {
+        this.ruleOf72 = 72/r;
+    }
+    @Override
+    public String toString() {
+        return "The rule of 72 is " + ruleOf72;
+    }
+}
+
+class SimpleInterestFunction {
+    private final double SI;
+
+    public SimpleInterestFunction(double P, double r, double t) {
+        this.SI = P * r * t;
+    }
+    @Override
+    public String toString() {
+        return "Simple Interest is = " + SI;
     }
 }
