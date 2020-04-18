@@ -28,13 +28,13 @@ public class MathTask {
         switch(eqNum) {
 
             case 1:
-                System.out.println("r");
+                System.out.println("Interest Rate");
                 double r = sc.nextDouble();
-                System.out.println("P");
+                System.out.println("Principle");
                 double P = sc.nextDouble();
-                System.out.println("n");
+                System.out.println("Payments per period");
                 double n = sc.nextDouble();
-                System.out.println("t");
+                System.out.println("Number of periods");
                 double t = sc.nextDouble();
 
                 AmortizationFunction MTA = new AmortizationFunction(r, P, n, t);
@@ -47,7 +47,7 @@ public class MathTask {
                 double P1 = sc.nextDouble();
                 System.out.println("Interest rate (decimal)");
                 double r1 = sc.nextDouble();
-                System.out.println("Time (year)");
+                System.out.println("Number of Periods");
                 double t1 = sc.nextDouble();
 
                 SimpleInterestFunction MTB = new SimpleInterestFunction(P1, r1, t1);
@@ -56,13 +56,13 @@ public class MathTask {
                 break;
 
             case 3:
-                System.out.println("P");
+                System.out.println("Principal");
                 double P2 = sc.nextDouble();
-                System.out.println("r");
+                System.out.println("Interest Rate");
                 double r2 = sc.nextDouble();
-                System.out.println("n");
+                System.out.println("Compounding per Period");
                 double n2 = sc.nextDouble();
-                System.out.println("t");
+                System.out.println("Number of Periods");
                 double t2 = sc.nextDouble();
 
                 CompoundInterestFunction MTG = new CompoundInterestFunction(P2, r2, n2, t2);
@@ -82,11 +82,11 @@ public class MathTask {
                 break;
 
             case 5:
-                System.out.println("PMT");
+                System.out.println("Payment");
                 double PMT = sc.nextDouble();
-                System.out.println("r");
+                System.out.println("Interest Rate");
                 double r3 = sc.nextDouble();
-                System.out.println("t");
+                System.out.println("number of payments");
                 double t3 = sc.nextDouble();
 
                 PVOAFunction MTE = new PVOAFunction(PMT, r3, t3);
@@ -95,11 +95,11 @@ public class MathTask {
                 break;
 
             case 6:
-                System.out.println("PMT");
+                System.out.println("Payment");
                 double PMT1 =sc.nextDouble();
-                System.out.println("r");
+                System.out.println("Interest Rate");
                 double r4 = sc.nextDouble();
-                System.out.println("t4");
+                System.out.println("Number of Payments");
                 double t4 = sc.nextDouble();
 
                 FVOAFunction MTZ = new FVOAFunction(PMT1, r4, t4);
@@ -112,7 +112,7 @@ public class MathTask {
                 double EV = sc.nextDouble();
                 System.out.println("Beginning Value");
                 double BV = sc.nextDouble();
-                System.out.println("t");
+                System.out.println("Number of Periods");
                 double t5 = sc.nextDouble();
 
                 CAGRFunction MTT = new CAGRFunction(EV, BV, t5);
@@ -134,7 +134,7 @@ public class MathTask {
                 break;
 
             case 9:
-                System.out.println("r");
+                System.out.println("Interest Rate");
                 double r5 = sc.nextDouble();
 
                 R72Function MTX = new R72Function(r5);
@@ -169,17 +169,17 @@ public class MathTask {
                 break;
 
             case 11:
-                System.out.println("I");
+                System.out.println("Investment");
                 double I = sc.nextDouble();
-                System.out.println("C");
+                System.out.println("Private Consumption");
                 double C = sc.nextDouble();
-                System.out.println("G");
+                System.out.println("Government Spending");
                 double G = sc.nextDouble();
-                System.out.println("X");
+                System.out.println("Exports");
                 double X = sc.nextDouble();
-                System.out.println("n");
+                System.out.println("Imports");
                 double N = sc.nextDouble();
-                ConsumptionFunction MTC = new ConsumptionFunction(I, C, G, X, N);
+                GDPFunction MTC = new GDPFunction(I, C, G, X, N);
                 System.out.println(MTC);
 
                 break;
@@ -347,11 +347,11 @@ class CompoundInterestFunction {
     }
 }
 
-class ConsumptionFunction {
+class GDPFunction {
     private final double getAnswer;
 
-    public ConsumptionFunction(double I, double C, double G, double X, double n) {
-        this.getAnswer = C + I + G + X*n;
+    public GDPFunction(double I, double C, double G, double X, double n) {
+        this.getAnswer = C + I + G + (X - n);
     }
     @Override
     public String toString() {
