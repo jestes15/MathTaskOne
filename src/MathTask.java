@@ -6,253 +6,289 @@ public class MathTask {
 
         Scanner sc = new Scanner(System.in);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int a = 0;
+        do {
+            System.out.println("Input eq number");
+            System.out.println("1: Amortization");
+            System.out.println("2: Simple Interest");
+            System.out.println("3: Compound Interest");
+            System.out.println("4: Cash Flow");
+            System.out.println("5: Present Value of an Ordinary Annuity");
+            System.out.println("6: Future Value of an Ordinary Annuity");
+            System.out.println("7: Compound Annual Growth Rate");
+            System.out.println("8: Leverage Ratio");
+            System.out.println("9: Rule of 72");
+            System.out.println("10: Credit Card Equation");
+            System.out.println("11: Consumption");
+            System.out.println("12: Sine/Cosine Function Table");
+            System.out.println("13: Physics Constants");
+            System.out.println("14: Creates a new file within the parameters defined");
+            System.out.println("15: Appends the file stated");
 
-        System.out.println("Input eq number");
-        System.out.println("1: Amortization");
-        System.out.println("2: Simple Interest");
-        System.out.println("3: Compound Interest");
-        System.out.println("4: Cash Flow");
-        System.out.println("5: Present Value of an Ordinary Annuity");
-        System.out.println("6: Future Value of an Ordinary Annuity");
-        System.out.println("7: Compound Annual Growth Rate");
-        System.out.println("8: Leverage Ratio");
-        System.out.println("9: Rule of 72");
-        System.out.println("10: Credit Card Equation");
-        System.out.println("11: Consumption");
-        System.out.println("12: Sine/Cosine Function Table");
-        System.out.println("13: Physics Constants");
-        System.out.println("14: Creates a new file within the parameters defined");
-        System.out.println("15: Appends the file stated");
+            int eqNum = sc.nextInt();
 
-        int eqNum = sc.nextInt();
-        switch(eqNum) {
+            switch (eqNum) {
 
-            case 1:
-                System.out.println("Interest Rate");
-                double r = sc.nextDouble();
-                System.out.println("Principle");
-                double P = sc.nextDouble();
-                System.out.println("Payments per period");
-                double n = sc.nextDouble();
-                System.out.println("Number of periods");
-                double t = sc.nextDouble();
+                case 1:
+                    System.out.println("Interest Rate");
+                    double r = sc.nextDouble();
+                    System.out.println("Principle");
+                    double P = sc.nextDouble();
+                    System.out.println("Payments per period");
+                    double n = sc.nextDouble();
+                    System.out.println("Number of periods");
+                    double t = sc.nextDouble();
 
-                AmortizationFunction MTA = new AmortizationFunction(r, P, n, t);
-                System.out.println(MTA);
+                    AmortizationFunction MTA = new AmortizationFunction(r, P, n, t);
+                    System.out.println(MTA);
 
-                break;
+                    a += 1;
 
-            case 2:
-                System.out.println("Principle");
-                double P1 = sc.nextDouble();
-                System.out.println("Interest rate (decimal)");
-                double r1 = sc.nextDouble();
-                System.out.println("Number of Periods");
-                double t1 = sc.nextDouble();
+                    break;
 
-                SimpleInterestFunction MTB = new SimpleInterestFunction(P1, r1, t1);
-                System.out.println(MTB);
+                case 2:
+                    System.out.println("Principle");
+                    double P1 = sc.nextDouble();
+                    System.out.println("Interest rate (decimal)");
+                    double r1 = sc.nextDouble();
+                    System.out.println("Number of Periods");
+                    double t1 = sc.nextDouble();
 
-                break;
+                    SimpleInterestFunction MTB = new SimpleInterestFunction(P1, r1, t1);
+                    System.out.println(MTB);
 
-            case 3:
-                System.out.println("Principal");
-                double P2 = sc.nextDouble();
-                System.out.println("Interest Rate");
-                double r2 = sc.nextDouble();
-                System.out.println("Compounding per Period");
-                double n2 = sc.nextDouble();
-                System.out.println("Number of Periods");
-                double t2 = sc.nextDouble();
+                    a += 1;
 
-                CompoundInterestFunction MTG = new CompoundInterestFunction(P2, r2, n2, t2);
-                System.out.println(MTG);
+                    break;
 
-                break;
+                case 3:
+                    System.out.println("Principal");
+                    double P2 = sc.nextDouble();
+                    System.out.println("Interest Rate");
+                    double r2 = sc.nextDouble();
+                    System.out.println("Compounding per Period");
+                    double n2 = sc.nextDouble();
+                    System.out.println("Number of Periods");
+                    double t2 = sc.nextDouble();
 
-            case 4:
-                System.out.println("Income");
-                double income = sc.nextDouble();
-                System.out.println("Expense");
-                double expense = sc.nextDouble();
+                    CompoundInterestFunction MTG = new CompoundInterestFunction(P2, r2, n2, t2);
+                    System.out.println(MTG);
 
-                CashFlowFunction MTD = new CashFlowFunction(income, expense);
-                System.out.println(MTD);
+                    a += 1;
 
-                break;
+                    break;
 
-            case 5:
-                System.out.println("Payment");
-                double PMT = sc.nextDouble();
-                System.out.println("Interest Rate");
-                double r3 = sc.nextDouble();
-                System.out.println("number of payments");
-                double t3 = sc.nextDouble();
+                case 4:
+                    System.out.println("Income");
+                    double income = sc.nextDouble();
+                    System.out.println("Expense");
+                    double expense = sc.nextDouble();
 
-                PVOAFunction MTE = new PVOAFunction(PMT, r3, t3);
-                System.out.println(MTE);
+                    CashFlowFunction MTD = new CashFlowFunction(income, expense);
+                    System.out.println(MTD);
 
-                break;
+                    a += 1;
 
-            case 6:
-                System.out.println("Payment");
-                double PMT1 =sc.nextDouble();
-                System.out.println("Interest Rate");
-                double r4 = sc.nextDouble();
-                System.out.println("Number of Payments");
-                double t4 = sc.nextDouble();
+                    break;
 
-                FVOAFunction MTZ = new FVOAFunction(PMT1, r4, t4);
-                System.out.println(MTZ);
+                case 5:
+                    System.out.println("Payment");
+                    double PMT = sc.nextDouble();
+                    System.out.println("Interest Rate");
+                    double r3 = sc.nextDouble();
+                    System.out.println("number of payments");
+                    double t3 = sc.nextDouble();
 
-                break;
+                    PVOAFunction MTE = new PVOAFunction(PMT, r3, t3);
+                    System.out.println(MTE);
 
-            case 7:
-                System.out.println("Ending Value");
-                double EV = sc.nextDouble();
-                System.out.println("Beginning Value");
-                double BV = sc.nextDouble();
-                System.out.println("Number of Periods");
-                double t5 = sc.nextDouble();
+                    a += 1;
 
-                CAGRFunction MTT = new CAGRFunction(EV, BV, t5);
-                System.out.println(MTT);
+                    break;
 
-                break;
+                case 6:
+                    System.out.println("Payment");
+                    double PMT1 = sc.nextDouble();
+                    System.out.println("Interest Rate");
+                    double r4 = sc.nextDouble();
+                    System.out.println("Number of Payments");
+                    double t4 = sc.nextDouble();
 
-            case 8:
-                System.out.println("Total Liabilities");
-                double TL = sc.nextDouble();
-                System.out.println("Total Debts");
-                double TD = sc.nextDouble();
-                System.out.println("Total Income");
-                double TI = sc.nextDouble();
+                    FVOAFunction MTZ = new FVOAFunction(PMT1, r4, t4);
+                    System.out.println(MTZ);
 
-                LeverageRatioFunction MTI = new LeverageRatioFunction(TL, TD, TI);
-                System.out.println(MTI);
+                    a += 1;
 
-                break;
+                    break;
 
-            case 9:
-                System.out.println("Interest Rate");
-                double r5 = sc.nextDouble();
+                case 7:
+                    System.out.println("Ending Value");
+                    double EV = sc.nextDouble();
+                    System.out.println("Beginning Value");
+                    double BV = sc.nextDouble();
+                    System.out.println("Number of Periods");
+                    double t5 = sc.nextDouble();
 
-                R72Function MTX = new R72Function(r5);
-                System.out.println(MTX);
+                    CAGRFunction MTT = new CAGRFunction(EV, BV, t5);
+                    System.out.println(MTT);
 
-                break;
+                    a += 1;
 
-            case 10:
-                System.out.println("Balance");
-                double b = sc.nextDouble();
-                System.out.println("Monthly Payment");
-                double p = sc.nextDouble();
+                    break;
 
-                System.out.println("Do you have the daily interest rate? 1 is yes 0 is no");
-                int Ans = sc.nextInt();
+                case 8:
+                    System.out.println("Total Liabilities");
+                    double TL = sc.nextDouble();
+                    System.out.println("Total Debts");
+                    double TD = sc.nextDouble();
+                    System.out.println("Total Income");
+                    double TI = sc.nextDouble();
 
-                if (Ans == 1) {
-                    System.out.println("Interest rate");
-                    double i = sc.nextDouble();
+                    LeverageRatioFunction MTI = new LeverageRatioFunction(TL, TD, TI);
+                    System.out.println(MTI);
 
-                    CCEIRFunction MTO = new CCEIRFunction(b, p, i);
-                    System.out.println(MTO);
-                }
-                if (Ans == 0) {
-                    System.out.println("APR");
-                    double APR = sc.nextDouble();
+                    a += 1;
 
-                    CCEAPRFunction MTP = new CCEAPRFunction(b, p, APR);
-                    System.out.println(MTP);
-                }
+                    break;
 
-                break;
+                case 9:
+                    System.out.println("Interest Rate");
+                    double r5 = sc.nextDouble();
 
-            case 11:
-                System.out.println("Investment");
-                double I = sc.nextDouble();
-                System.out.println("Private Consumption");
-                double C = sc.nextDouble();
-                System.out.println("Government Spending");
-                double G = sc.nextDouble();
-                System.out.println("Exports");
-                double X = sc.nextDouble();
-                System.out.println("Imports");
-                double N = sc.nextDouble();
-                GDPFunction MTC = new GDPFunction(I, C, G, X, N);
-                System.out.println(MTC);
+                    R72Function MTX = new R72Function(r5);
+                    System.out.println(MTX);
 
-                break;
+                    a += 1;
 
-            case 12:
-                System.out.println("Input Case Value");
-                System.out.println("case 0 is a sine table");
-                System.out.println("case 1 is a cosine table");
+                    break;
 
-                int y = sc.nextInt();
-                sineValueFunction IF = new sineValueFunction(y);
-                System.out.println(IF);
+                case 10:
+                    System.out.println("Balance");
+                    double b = sc.nextDouble();
+                    System.out.println("Monthly Payment");
+                    double p = sc.nextDouble();
 
-                break;
+                    System.out.println("Do you have the daily interest rate? 1 is yes 0 is no");
+                    int Ans = sc.nextInt();
 
-            case 13:
-                System.out.println("0: Atomic Mass Constant");
-                System.out.println("1: Avogadro's Number");
-                System.out.println("2: Boltzmann Constant");
-                System.out.println("3: Electron Charge");
-                System.out.println("4: Faraday Constant");
-                System.out.println("5: Gas Constant in L-atm/mol-K");
-                System.out.println("6: Gas Constant in J/mol-K");
-                System.out.println("7: Mass of an Electron in amu");
-                System.out.println("8: Mass of an Electron in kg");
-                System.out.println("9: Mass of a Neutron in amu");
-                System.out.println("10: Mass of a Neutron in kg");
-                System.out.println("11: Mass of a Proton in amu");
-                System.out.println("12: Mass of a Proton in kg");
-                System.out.println("13: Plank Constant");
-                System.out.println("14: Speed of Light in a Vacuum");
-                System.out.println("15: Gravitational Constant");
-                System.out.println("16: Magnetic Constant");
-                System.out.println("17: Electric Constant in terms of C^2/N-m^2");
-                System.out.println("18: Electr1ic Constant in terms of N-m^2/C^2");
+                    if (Ans == 1) {
+                        System.out.println("Interest rate");
+                        double i = sc.nextDouble();
 
-                int getInteger = sc.nextInt();
-                PhysicsConstants PC = new PhysicsConstants(getInteger);
-                System.out.println(PC);
+                        CCEIRFunction MTO = new CCEIRFunction(b, p, i);
+                        System.out.println(MTO);
 
-                break;
+                        a += 1;
+                    }
+                    if (Ans == 0) {
+                        System.out.println("APR");
+                        double APR = sc.nextDouble();
 
-            case 14:
-                System.out.println("Name of file");
-                String getName = sc.next();
-                System.out.println("Directory input should be in the form of \\Folder\\");
-                String getDir = sc.next();
+                        CCEAPRFunction MTP = new CCEAPRFunction(b, p, APR);
+                        System.out.println(MTP);
 
-                CreateFile CF = new CreateFile(getName, getDir);
-                System.out.println(CF);
+                        a += 1;
+                    }
 
-                break;
+                    break;
 
-            case 15:
-                String getNameOfFile = sc.next();
-                System.out.println("Directory input should be in the form of \\Folder\\");
-                String getDirectory = sc.next();
-                String getWrite = br.readLine();
+                case 11:
+                    System.out.println("Investment");
+                    double I = sc.nextDouble();
+                    System.out.println("Private Consumption");
+                    double C = sc.nextDouble();
+                    System.out.println("Government Spending");
+                    double G = sc.nextDouble();
+                    System.out.println("Exports");
+                    double X = sc.nextDouble();
+                    System.out.println("Imports");
+                    double N = sc.nextDouble();
+                    GDPFunction MTC = new GDPFunction(I, C, G, X, N);
+                    System.out.println(MTC);
 
-                System.out.println(getWrite);
+                    a += 1;
 
-                WriteFile RF = new WriteFile(getWrite, getDirectory, getNameOfFile);
-                System.out.println(RF);
+                    break;
 
-                break;
+                case 12:
+                    System.out.println("Input Case Value");
+                    System.out.println("case 0 is a sine table");
+                    System.out.println("case 1 is a cosine table");
 
-            default:
-                System.out.println("No more options");
+                    int y = sc.nextInt();
+                    sineValueFunction IF = new sineValueFunction(y);
+                    System.out.println(IF);
 
+                    break;
+
+                case 13:
+                    System.out.println("0: Atomic Mass Constant");
+                    System.out.println("1: Avogadro's Number");
+                    System.out.println("2: Boltzmann Constant");
+                    System.out.println("3: Electron Charge");
+                    System.out.println("4: Faraday Constant");
+                    System.out.println("5: Gas Constant in L-atm/mol-K");
+                    System.out.println("6: Gas Constant in J/mol-K");
+                    System.out.println("7: Mass of an Electron in amu");
+                    System.out.println("8: Mass of an Electron in kg");
+                    System.out.println("9: Mass of a Neutron in amu");
+                    System.out.println("10: Mass of a Neutron in kg");
+                    System.out.println("11: Mass of a Proton in amu");
+                    System.out.println("12: Mass of a Proton in kg");
+                    System.out.println("13: Plank Constant");
+                    System.out.println("14: Speed of Light in a Vacuum");
+                    System.out.println("15: Gravitational Constant");
+                    System.out.println("16: Magnetic Constant");
+                    System.out.println("17: Electric Constant in terms of C^2/N-m^2");
+                    System.out.println("18: Electr1ic Constant in terms of N-m^2/C^2");
+
+                    int getInteger = sc.nextInt();
+                    PhysicsConstants PC = new PhysicsConstants(getInteger);
+                    System.out.println(PC);
+
+                    a += 1;
+
+                    break;
+
+                case 14:
+                    System.out.println("Name of file");
+                    String getName = sc.next();
+                    System.out.println("Directory input should be in the form of \\Folder\\");
+                    String getDir = sc.next();
+
+                    CreateFile CF = new CreateFile(getName, getDir);
+                    System.out.println(CF);
+
+                    a += 1;
+
+                    break;
+
+                case 15:
+                    System.out.println("Name of file");
+                    String getNameOfFile = sc.next();
+                    System.out.println("Directory input should be in the form of \\Folder\\");
+                    String getDirectory = sc.next();
+                    System.out.println("Input text to be appended to file");
+                    String getWrite = br.readLine();
+
+                    System.out.println(getWrite);
+
+                    WriteFile RF = new WriteFile(getWrite, getDirectory, getNameOfFile);
+                    System.out.println(RF);
+
+                    a += 1;
+
+                    break;
+
+                default:
+                    System.out.println("No more options");
+
+            }
         }
+
+        while (a < 10);
     }
 }
-
 class AmortizationFunction {
     private final double A;
 
@@ -422,6 +458,7 @@ class SimpleInterestFunction {
     public SimpleInterestFunction(double P, double r, double t) {
         this.SI = P * r * t;
     }
+
     @Override
     public String toString() {
         return "Simple Interest is = " + SI;
