@@ -4,6 +4,7 @@ public class CreateFile {
 
     public CreateFile(String getName, String getDir) throws IOException {
         String errorPath = System.getProperty("user.dir") + "\\ERROR-CACHE\\ERROR-1.txt";
+
         try {
             File myOBJ = new File(System.getProperty("user.dir") + getDir + getName + ".txt");
             if (myOBJ.createNewFile()) {

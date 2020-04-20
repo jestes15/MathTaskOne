@@ -1,5 +1,6 @@
 import java.util.*;
 import java.io.*;
+import java.nio.*;
 
 public class MathTask {
     public static void main(String[] args) throws IOException {
@@ -10,6 +11,7 @@ public class MathTask {
         int a = 0;
         do {
             System.out.println("Input eq number");
+            System.out.println("0: Process Stop");
             System.out.println("1: Amortization");
             System.out.println("2: Simple Interest");
             System.out.println("3: Compound Interest");
@@ -29,6 +31,9 @@ public class MathTask {
             int eqNum = sc.nextInt();
 
             switch (eqNum) {
+                case 0:
+                    a += 10;
+                    break;
 
                 case 1:
                     System.out.println("Interest Rate");
@@ -296,7 +301,7 @@ public class MathTask {
                             double theta = 0;
                             do {
                                 double getValue = Math.sin(theta * (Math.PI / 180));
-                                String getStringValue = theta + " " + getValue + " ";
+                                String getStringValue = theta + " " + getValue;
                                 WriteFile WF = new WriteFile(getStringValue, getNewDir, getFileName);
 
                                 theta += 1;
@@ -306,12 +311,18 @@ public class MathTask {
                     }
 
                         break;
+
+                case 17:
+                    String getText = sc.next();
+                    int getNumberOfLInes = sc.nextInt();
+                    writeBufferedWriter wBR = new writeBufferedWriter(getText, getNumberOfLInes);
+
+                    break;
                 default:
                     System.out.println("No more options");
 
             }
         }
-
         while (a < 10);
     }
 }
