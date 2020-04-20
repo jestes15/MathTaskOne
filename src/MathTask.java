@@ -1,6 +1,5 @@
 import java.util.*;
 import java.io.*;
-import java.nio.*;
 
 public class MathTask {
     public static void main(String[] args) throws IOException {
@@ -286,36 +285,51 @@ public class MathTask {
 
                     break;
 
-                    case 16:
+                case 16:
 
-                        System.out.println("Name of file");
-                        String getFileName = "TrigTable";
-                        System.out.println("Directory input should be in the form of \\Folder\\");
-                        String getNewDir = "\\TRIG-TABLE\\";
-                        CreateFile FC = new CreateFile(getFileName, getNewDir);
-                        System.out.println(FC);
+                    System.out.println("Name of file");
+                    String getFileName = "TrigTable";
 
-                        int getTable = sc.nextInt();
-                        if (getTable == 0) {
+                    System.out.println("Directory input should be in the form of \\Folder\\");
+                    String getNewDir = "\\TRIG-TABLE\\";
 
-                            double theta = 0;
-                            do {
-                                double getValue = Math.sin(theta * (Math.PI / 180));
-                                String getStringValue = theta + " " + getValue;
-                                WriteFile WF = new WriteFile(getStringValue, getNewDir, getFileName);
+                    CreateFile FC = new CreateFile(getFileName, getNewDir);
+                    System.out.println(FC);
 
-                                theta += 1;
-                                System.out.println(theta);
-                            }
-                            while (theta < 360);
+                    int getTable = sc.nextInt();
+                    if (getTable == 0) {
+
+                        double theta = 0;
+                        do {
+                            double getValue = Math.sin(theta * (Math.PI / 180));
+                            String getStringValue = theta + " " + getValue;
+
+                            writeBufferedWriter wbr = new writeBufferedWriter(getStringValue, 361, getNewDir, getFileName);
+                            System.out.println(wbr);
+
+                            //WriteFile WF = new WriteFile(getStringValue, getNewDir, getFileName);
+
+                            theta += 1;
+                            System.out.println(theta);
+                        }
+                        while (theta < 360);
                     }
 
-                        break;
+                    System.out.println("Give value for a");
+                    a = sc.nextInt();
+
+                    break;
 
                 case 17:
                     String getText = sc.next();
-                    int getNumberOfLInes = sc.nextInt();
-                    writeBufferedWriter wBR = new writeBufferedWriter(getText, getNumberOfLInes);
+                    int getNumberOfLines = sc.nextInt();
+                    String Directory = "\\TRIG-TABLE\\";
+                    String GetFileName = "TrigTable";
+                    writeBufferedWriter wBR = new writeBufferedWriter(getText, getNumberOfLines, Directory, GetFileName);
+                    System.out.println(wBR);
+
+                    System.out.println("Give value for a");
+                    a = sc.nextInt();
 
                     break;
                 default:
