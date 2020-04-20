@@ -282,10 +282,6 @@ public class MathTask {
                     break;
 
                     case 16:
-                        System.out.println("Chose table type: Sine or Cosine");
-                        int getTable = sc.nextInt();
-                        sineValueFunction sVF = new sineValueFunction(getTable);
-                        System.out.println(sVF);
 
                         System.out.println("Name of file");
                         String getFileName = "TrigTable";
@@ -294,8 +290,20 @@ public class MathTask {
                         CreateFile FC = new CreateFile(getFileName, getNewDir);
                         System.out.println(FC);
 
-                        //Issue with writing the trig table to the file
-                        WriteFile WF = new WriteFile(sVF, getNewDir, getFileName);
+                        int getTable = sc.nextInt();
+                        if (getTable == 0) {
+
+                            double theta = 0;
+                            do {
+                                double getValue = Math.sin(theta * (Math.PI / 180));
+                                String getStringValue = theta + " " + getValue + " ";
+                                WriteFile WF = new WriteFile(getStringValue, getNewDir, getFileName);
+
+                                theta += 1;
+                                System.out.println(theta);
+                            }
+                            while (theta < 360);
+                    }
 
                         break;
                 default:
