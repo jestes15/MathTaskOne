@@ -6,11 +6,8 @@ class writeBufferedWriter {
 
         String errorPath = System.getProperty("user.dir") + "\\ERROR-CACHE\\ERROR-1.txt";
         String path = System.getProperty("user.dir") + getDirectory + getFileName + ".txt";
-
         File file = new File(path);
-
         String dataWithNewLine = data + System.getProperty("line.separator");
-
         FileWriter fr = new FileWriter(file);
         BufferedWriter br = new BufferedWriter(fr);
         try {
@@ -18,20 +15,16 @@ class writeBufferedWriter {
                 br.newLine();
                 br.write(dataWithNewLine);
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-
             FileWriter fw = new FileWriter(errorPath, true);
             fw.write(String.valueOf(e));
             fw.close();
-        }
-        finally {
+        } finally {
             try {
                 br.close();
                 fr.close();
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
 
                 FileWriter fw = new FileWriter(errorPath, true);

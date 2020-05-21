@@ -26,6 +26,7 @@ public class MathTask {
             System.out.println("13: Physics Constants");
             System.out.println("14: Creates a new file within the parameters defined");
             System.out.println("15: Appends the file stated");
+            System.out.println("100: Stop");
 
             int eqNum = sc.nextInt();
 
@@ -245,7 +246,7 @@ public class MathTask {
                     System.out.println("15: Gravitational Constant");
                     System.out.println("16: Magnetic Constant");
                     System.out.println("17: Electric Constant in terms of C^2/N-m^2");
-                    System.out.println("18: Electr1ic Constant in terms of N-m^2/C^2");
+                    System.out.println("18: Electric Constant in terms of N-m^2/C^2");
 
                     int getInteger = sc.nextInt();
                     PhysicsConstants PC = new PhysicsConstants(getInteger);
@@ -269,19 +270,25 @@ public class MathTask {
                     break;
 
                 case 15:
-                    System.out.println("Name of file");
-                    String getNameOfFile = sc.next();
-                    System.out.println("Directory input should be in the form of \\Folder\\");
-                    String getDirectory = sc.next();
-                    System.out.println("Input text to be appended to file");
-                    String getWrite = br.readLine();
+                    int bc;
+                    bc = 0;
 
-                    System.out.println(getWrite);
+                    do {
+                        System.out.println("Name of file");
+                        String getNameOfFile = sc.next();
+                        System.out.println("Directory input should be in the form of \\Folder\\");
+                        String getDirectory = sc.next();
+                        System.out.println("Input text to be appended to file");
+                        String getWrite = br.readLine();
 
-                    WriteFile RF = new WriteFile(getWrite, getDirectory, getNameOfFile);
-                    System.out.println(RF);
+                        System.out.println(getWrite);
 
-                    a += 1;
+                        WriteFile RF = new WriteFile(getWrite, getDirectory, getNameOfFile);
+                        System.out.println(RF);
+
+                        bc += 1;
+                        a += 1;
+                    } while (bc < 3);
 
                     break;
 
@@ -332,8 +339,21 @@ public class MathTask {
                     a = sc.nextInt();
 
                     break;
+
+
+                case 100:
+                    String exit = sc.next();
+                    System.out.println("Are you sure you wish to quit? y/n");
+                    if (exit.equals("y")) {
+                        a += 10;
+                    }
+                    if (exit.equals("n")) {
+                        a += 0;
+                    }
+
+                    break;
                 default:
-                    System.out.println("No more options");
+                    System.out.println("Error: value not valid");
 
             }
         }
