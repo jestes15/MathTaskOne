@@ -26,6 +26,8 @@ public class MathTask {
             System.out.println("13: Physics Constants");
             System.out.println("14: Creates a new file within the parameters defined");
             System.out.println("15: Appends the file stated");
+            System.out.println("16: Append table to file test");
+            System.out.println("17: Different method for case 16");
             System.out.println("100: Stop");
 
             int eqNum = sc.nextInt();
@@ -286,7 +288,13 @@ public class MathTask {
                         WriteFile RF = new WriteFile(getWrite, getDirectory, getNameOfFile);
                         System.out.println(RF);
 
-                        bc += 1;
+                        System.out.println("Do you want to do another? y/n");
+                        String finish = sc.next();
+                        if (finish.equals("y")) {
+                            bc = 1;
+                        }else {
+                            bc += 3;
+                        }
                         a += 1;
                     } while (bc < 3);
 
@@ -342,8 +350,9 @@ public class MathTask {
 
 
                 case 100:
-                    String exit = sc.next();
                     System.out.println("Are you sure you wish to quit? y/n");
+                    String exit = sc.next();
+
                     if (exit.equals("y")) {
                         a += 10;
                     }

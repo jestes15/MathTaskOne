@@ -9,7 +9,7 @@ public class WriteFile {
 
         try {
             FileWriter fw = new FileWriter(path, true);
-            fw.write(getWrite);
+            fw.write(getWrite + "\r\n");
             fw.close();
             System.out.println("Successfully wrote to " + getNameOfFile + ".txt.");
         }
