@@ -317,12 +317,13 @@ public class MathTask {
                         double theta = 0;
                         do {
                             double getValue = Math.sin(theta * (Math.PI / 180));
-                            String getStringValue = theta + " " + getValue;
+                            String getStringValue = theta + "     " + getValue;
 
-                            writeBufferedWriter wbr = new writeBufferedWriter(getStringValue, 361, getNewDir, getFileName);
-                            System.out.println(wbr);
+                            //writeBufferedWriter wbr = new writeBufferedWriter(getStringValue, 361, getNewDir, getFileName);
+                            //System.out.println(wbr);
 
-                            //WriteFile WF = new WriteFile(getStringValue, getNewDir, getFileName);
+                            WriteFile WF = new WriteFile(getStringValue, getNewDir, getFileName);
+                            System.out.println(WF);
 
                             theta += 1;
                             System.out.println(theta);
