@@ -1,6 +1,7 @@
 import java.util.*;
 import java.io.*;
 
+
 public class MathTask {
     public static void main(String[] args) throws IOException {
 
@@ -43,11 +44,11 @@ public class MathTask {
                     System.out.println("Principle");
                     double P = sc.nextDouble();
                     System.out.println("Payments per period");
-                    double n = sc.nextDouble();
+                    double n1 = sc.nextDouble();
                     System.out.println("Number of periods");
                     double t = sc.nextDouble();
 
-                    AmortizationFunction MTA = new AmortizationFunction(r, P, n, t);
+                    AmortizationFunction MTA = new AmortizationFunction(r, P, n1, t);
                     System.out.println(MTA);
 
                     a += 1;
@@ -223,8 +224,8 @@ public class MathTask {
                     System.out.println("case 0 is a sine table");
                     System.out.println("case 1 is a cosine table");
 
-                    int y = sc.nextInt();
-                    sineValueFunction IF = new sineValueFunction(y);
+                    int y1 = sc.nextInt();
+                    sineValueFunction IF = new sineValueFunction(y1);
                     System.out.println(IF);
 
                     break;
@@ -337,17 +338,26 @@ public class MathTask {
                     break;
 
                 case 17:
-                    String getText = sc.next();
-                    int getNumberOfLines = sc.nextInt();
-                    String Directory = "\\TRIG-TABLE\\";
-                    String GetFileName = "TrigTable";
-                    writeBufferedWriter wBR = new writeBufferedWriter(getText, getNumberOfLines, Directory, GetFileName);
-                    System.out.println(wBR);
 
-                    System.out.println("Give value for a");
-                    a = sc.nextInt();
+                    do {
+                        String getText = sc.next();
+                        String Directory = "\\TRIG-TABLE\\";
+                        String GetFileName = "TrigTable";
+                        writeBufferedWriter wBR = new writeBufferedWriter(getText, Directory, GetFileName);
+                        System.out.println(wBR);
+
+                        System.out.println("Give value for a");
+                        a++;
+                        //a = sc.nextInt();
+                    }
+                    while (a<10);
 
                     break;
+
+                case 18:
+                    System.out.println("Work in prgress");
+
+
 
 
                 case 100:

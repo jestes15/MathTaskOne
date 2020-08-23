@@ -2,19 +2,19 @@ import java.io.*;
 
 class writeBufferedWriter {
 
-    public writeBufferedWriter(String data, int numberOfLines, String getDirectory, String getFileName) throws IOException {
+    public writeBufferedWriter(String data, String getDirectory, String getFileName) throws IOException {
 
         String errorPath = System.getProperty("user.dir") + "\\ERROR-CACHE\\ERROR-1.txt";
         String path = System.getProperty("user.dir") + getDirectory + getFileName + ".txt";
         File file = new File(path);
-        String dataWithNewLine = data + System.getProperty("line.separator");
-        FileWriter fr = new FileWriter(file);
+        FileWriter fr = new FileWriter(file, true);
         BufferedWriter br = new BufferedWriter(fr);
         try {
-            for (int i = numberOfLines; i > 0; i--) {
-                br.newLine();
-                br.write(dataWithNewLine);
-            }
+
+            br.newLine();
+            br.write(data + "\r\n");
+            br.close();
+
         } catch (IOException e) {
             e.printStackTrace();
             FileWriter fw = new FileWriter(errorPath, true);
