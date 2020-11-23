@@ -1,2 +1,6 @@
 # Default ignored files
 /workspace.xml
+/out
+/TEST-FILES
+/TRIG-TABLE
+/ERROR-CACHE
