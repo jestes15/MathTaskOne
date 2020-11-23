@@ -9,10 +9,11 @@ public class MathTask {
         Scanner sc = new Scanner(System.in);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StatsFunctions StatsFunction = new StatsFunctions();
+        classBufferedWriter cBW = new classBufferedWriter();
         String returnVal = "";
         boolean loopVal = true;
         do {
-
+            int eqNum = 0;
             String ListMsg = "Input eq number\n0: Process Stop\n1: Amortization\n2: Simple Interest\n" +
                     "3: Compound Interest\n4: Cash Flow\n5: Present Value of an Ordinary Annuity\n" +
                     "6: Future Value of an Ordinary Annuity\n7: Compound Annual Growth Rate\n" +
@@ -21,8 +22,16 @@ public class MathTask {
                     "15: Appends the file stated\n16: Append table to file test\n17: Different method for case 16\n" +
                     "18: Work in progress";
             System.out.println(ListMsg);
-
-            int eqNum = sc.nextInt();
+            try {
+                eqNum = sc.nextInt();
+            }
+            catch (InputMismatchException e) {
+                String getText = e + "";
+                String getDirectory = "\\ERROR-CACHE\\";
+                String getFileName = "ERROR-1";
+                String exitMSG = cBW.writeBufferedWriter(getText, getDirectory, getFileName);
+                System.out.println(exitMSG);
+            }
 
             switch (eqNum) {
                 case 0:
@@ -197,25 +206,14 @@ public class MathTask {
                     break;
 
                 case 13:
-                    System.out.println("0: Atomic Mass Constant");
-                    System.out.println("1: Avogadro's Number");
-                    System.out.println("2: Boltzmann Constant");
-                    System.out.println("3: Electron Charge");
-                    System.out.println("4: Faraday Constant");
-                    System.out.println("5: Gas Constant in L-atm/mol-K");
-                    System.out.println("6: Gas Constant in J/mol-K");
-                    System.out.println("7: Mass of an Electron in amu");
-                    System.out.println("8: Mass of an Electron in kg");
-                    System.out.println("9: Mass of a Neutron in amu");
-                    System.out.println("10: Mass of a Neutron in kg");
-                    System.out.println("11: Mass of a Proton in amu");
-                    System.out.println("12: Mass of a Proton in kg");
-                    System.out.println("13: Plank Constant");
-                    System.out.println("14: Speed of Light in a Vacuum");
-                    System.out.println("15: Gravitational Constant");
-                    System.out.println("16: Magnetic Constant");
-                    System.out.println("17: Electric Constant in terms of C^2/N-m^2");
-                    System.out.println("18: Electric Constant in terms of N-m^2/C^2");
+                    String userMenu = "0: Atomic Mass Constant\n1: Avogadro's Number\n2: Boltzmann Constant\n" +
+                            "3: Electron Charge\n4: Faraday Constant\n5: Gas Constant in L-atm/mol-K\n" +
+                            "6: Gas Constant in J/mol-K\n7: Mass of an Electron in amu\n8: Mass of an Electron in kg\n" +
+                            "9: Mass of a Neutron in amu\n10: Mass of a Neutron in kg\n11: Mass of a Proton in amu\n" +
+                            "12: Mass of a Proton in kg\n13: Plank Constant\n14: Speed of Light in a Vacuum\n" +
+                            "15: Gravitational Constant\n16: Magnetic Constant\n17: Electric Constant in terms of C^2/N-m^2\n" +
+                            "18: Electric Constant in terms of N-m^2/C^2";
+                    System.out.println(userMenu);
 
                     int getInteger = sc.nextInt();
                     PhysicsConstants PC = new PhysicsConstants(getInteger);
@@ -228,22 +226,16 @@ public class MathTask {
 
                     do {
                         int n = 0;
-                        String getName2 = sc.next();
                         int getMax = sc.nextInt();
                         do {
+                            System.out.println("Name of file");
+                            String getName = sc.next();
+                            System.out.println("Directory input should be in the form of \\Folder\\");
+                            String getDir = sc.next();
 
-                            //System.out.println("Name of file");
-                            int getName = n;
-                            String name = getName2 + "_" + getName;
-                            //System.out.println("Directory input should be in the form of \\Folder\\");
-                            //String getDir = sc.next();
-                            String getDir = "\\TEST-FILES\\" + getName2 + "\\";
-
-                            CreateFile CF = new CreateFile(name, getDir);
+                            CreateFile CF = new CreateFile(getName, getDir);
                             System.out.println(CF);
-
                             n++;
-
                         } while (n <= getMax);
                         b3++;
                     } while (b3 < 70);
@@ -314,10 +306,10 @@ public class MathTask {
                     int a = 0;
                     do {
                         String getText = sc.next();
-                        String Directory = "\\TRIG-TABLE\\";
-                        String GetFileName = "TrigTable";
-                        writeBufferedWriter wBR = new writeBufferedWriter(getText, Directory, GetFileName);
-                        System.out.println(wBR);
+                        String getDirectory = "\\TRIG-TABLE\\";
+                        String getFile = "TrigTable";
+                        String exitMSG = cBW.writeBufferedWriter(getText, getDirectory, getFile);
+                        System.out.println(exitMSG);
 
                         System.out.println("Give value for a");
                         a++;

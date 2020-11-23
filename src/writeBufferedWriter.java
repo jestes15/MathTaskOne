@@ -1,8 +1,8 @@
 import java.io.*;
 
-class writeBufferedWriter {
+class classBufferedWriter {
 
-    public writeBufferedWriter(String data, String getDirectory, String getFileName) throws IOException {
+    public String writeBufferedWriter(String data, String getDirectory, String getFileName) throws IOException {
 
         String errorPath = System.getProperty("user.dir") + "\\ERROR-CACHE\\ERROR-1.txt";
         String path = System.getProperty("user.dir") + getDirectory + getFileName + ".txt";
@@ -10,8 +10,7 @@ class writeBufferedWriter {
         FileWriter fr = new FileWriter(file, true);
         BufferedWriter br = new BufferedWriter(fr);
         try {
-
-            br.newLine();
+            //br.newLine();
             br.write(data + "\r\n");
             br.close();
 
@@ -32,11 +31,7 @@ class writeBufferedWriter {
                 fw.close();
             }
         }
-        System.out.println("PROCESS FINISHED");
+        return "PROCESS FINISHED";
 
-    }
-    @Override
-    public String toString() {
-        return "RETURN MESSAGE TEST";
     }
 }
