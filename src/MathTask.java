@@ -12,8 +12,9 @@ public class MathTask {
         classWriteFile cWF = new classWriteFile();
         CreateFile FC = new CreateFile();
         Functions fRet = new Functions();
-        String returnVal = "";
+        String returnVal = null;
         boolean loopVal = true;
+
         do {
             String eqNum = "";
             String ListMsg = "Input eq number\nexit: Process Stop\n1: Amortization\n2: Simple Interest\n" +
@@ -43,167 +44,162 @@ public class MathTask {
 
                 case "1":
                     System.out.print("Interest Rate> ");
-                    double r = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Principle> ");
-                    double P = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
                     System.out.print("Payments per period> ");
-                    double n1 = sc.nextDouble();
+                    fRet.setInputVal3(sc.nextDouble());
                     System.out.print("Number of periods> ");
-                    double t = sc.nextDouble();
+                    fRet.setInputVal4(sc.nextDouble());
 
-                    returnVal = fRet.AmortizationFunction(r, P, n1, t);
-                    System.out.println(returnVal);
+                    fRet.AmortizationFunction();
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "2":
                     System.out.print("Principle> ");
-                    double P1 = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Interest rate (decimal)> ");
-                    double r1 = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
                     System.out.print("Number of Periods> ");
-                    double t1 = sc.nextDouble();
+                    fRet.setInputVal3(sc.nextDouble());
 
-                    returnVal = fRet.SimpleInterestFunction(P1, r1, t1);
-                    System.out.println(returnVal);
+                    fRet.SimpleInterestFunction();
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "3":
                     System.out.print("Principal> ");
-                    double P2 = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Interest Rate> ");
-                    double r2 = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
                     System.out.print("Compounding per Period> ");
-                    double n2 = sc.nextDouble();
+                    fRet.setInputVal3(sc.nextDouble());
                     System.out.print("Number of Periods> ");
-                    double t2 = sc.nextDouble();
+                    fRet.setInputVal4(sc.nextDouble());
 
-                    returnVal = fRet.CompoundInterestFunction(P2, r2, n2, t2);
-                    System.out.println(returnVal);
+                    fRet.CompoundInterestFunction();
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "4":
                     System.out.print("Income> ");
-                    double income = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Expense> ");
-                    double expense = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
 
-                    returnVal = fRet.CashFlowFunction(income, expense);
-                    System.out.println(returnVal);
+                    fRet.CashFlowFunction();
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "5":
                     System.out.print("Payment> ");
-                    double PMT = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Interest Rate> ");
-                    double r3 = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
                     System.out.print("number of payments> ");
-                    double t3 = sc.nextDouble();
+                    fRet.setInputVal3(sc.nextDouble());
 
-                    returnVal = fRet.PFunction(PMT, r3, t3);
-                    System.out.println(returnVal);
+                    fRet.PFunction();
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "6":
                     System.out.print("Payment> ");
-                    double PMT1 = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Interest Rate> ");
-                    double r4 = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
                     System.out.print("Number of Payments> ");
-                    double t4 = sc.nextDouble();
+                    fRet.setInputVal3(sc.nextDouble());
 
-                    returnVal = fRet.FVOAFunction(PMT1, r4, t4);
-                    System.out.println(returnVal);
+                    fRet.FVOAFunction();
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "7":
                     System.out.print("Ending Value> ");
-                    double EV = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Beginning Value> ");
-                    double BV = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
                     System.out.print("Number of Periods> ");
-                    double t5 = sc.nextDouble();
+                    fRet.setInputVal3(sc.nextDouble());
 
-                    returnVal = fRet.CAGRFunction(EV, BV, t5);
-                    System.out.println(returnVal);
+                    fRet.CAGRFunction();
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "8":
                     System.out.print("Total Liabilities> ");
-                    double TL = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Total Debts> ");
-                    double TD = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
                     System.out.print("Total Income> ");
-                    double TI = sc.nextDouble();
+                    fRet.setInputVal3(sc.nextDouble());
 
-                    returnVal = fRet.LeverageRatioFunction(TL, TD, TI);
-                    System.out.println(returnVal);
+                    fRet.LeverageRatioFunction();
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "9":
                     System.out.print("Interest Rate> ");
-                    double r5 = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
 
-                    returnVal = fRet.R72Function(r5);
-                    System.out.println(returnVal);
+                    fRet.R72Function();
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "10":
                     System.out.print("Balance> ");
-                    double b = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Monthly Payment> ");
-                    double p = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
 
                     System.out.print("Do you have the daily interest rate? (Yes/No): ");
                     String Ans = sc.next();
 
                     if (Ans.equals("Yes")) {
                         System.out.print("Interest rate> ");
-                        double i = sc.nextDouble();
-
-                        returnVal = fRet.CCEIRFunction(b, p, i);
+                        fRet.setInputVal3(sc.nextDouble());
+                        fRet.CCEIRFunction();
                     }
                     if (Ans.equals("No")) {
                         System.out.print("APR> ");
-                        double APR = sc.nextDouble();
-
-                        returnVal = fRet.CCEAPRFunction(b, p, APR);
+                        fRet.setInputVal3(sc.nextDouble());
+                        fRet.CCEAPRFunction();
                     }
-                    System.out.println(returnVal);
+                    System.out.println(fRet.getReturnVal());
 
                     break;
 
                 case "11":
                     System.out.print("Investment> ");
-                    double I = sc.nextDouble();
+                    fRet.setInputVal1(sc.nextDouble());
                     System.out.print("Private Consumption> ");
-                    double C = sc.nextDouble();
+                    fRet.setInputVal2(sc.nextDouble());
                     System.out.print("Government Spending> ");
-                    double G = sc.nextDouble();
+                    fRet.setInputVal3(sc.nextDouble());
                     System.out.print("Exports> ");
-                    double X = sc.nextDouble();
+                    fRet.setInputVal4(sc.nextDouble());
                     System.out.print("Imports> ");
-                    double N = sc.nextDouble();
-                    returnVal = fRet.GDPFunction(I, C, G, X, N);
+                    fRet.setInputVal5(sc.nextDouble());
+                    fRet.GDPFunction();
                     System.out.println(returnVal);
 
                     break;
 
                 case "12":
-                    System.out.println("Input Case Value");
-                    System.out.println("case 0 is a sine table");
-                    System.out.println("case 1 is a cosine table");
-
-                    int y1 = sc.nextInt();
-                    sineValueFunction IF = new sineValueFunction(y1);
+                    System.out.println("Which table do you want?\n0 for a Sine table\n1 for a Cosine table");
+                    fRet.setInputVal1(sc.nextInt());
+                    sineValueFunction IF = new sineValueFunction((int)fRet.getInputVal1());
                     System.out.println(IF);
 
                     break;

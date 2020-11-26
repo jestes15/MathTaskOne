@@ -4,6 +4,7 @@ public class Functions {
     private double inputVal2;
     private double inputVal3;
     private double inputVal4;
+    private double inputVal5;
 
     public void setReturnVal(String returnVal) {
         this.returnVal = returnVal;
@@ -40,98 +41,104 @@ public class Functions {
         return inputVal4;
     }
 
-    public String AmortizationFunction(double r, double P, double n, double t) {
-        double calcNum = r * P;
-        double calcParent = 1 + (r / n);
-        double exp = -(n * t);
+    public void setInputVal5(double inputVal5) {
+        this.inputVal5 = inputVal5;
+    }
+    public double getInputVal5() {
+        return inputVal5;
+    }
+
+
+    public void AmortizationFunction() {
+        double calcNum = inputVal1 * inputVal2;
+        double calcParent = 1 + (inputVal1 / inputVal3);
+        double exp = -(inputVal3 * inputVal4);
         double calcBracket = 1 - Math.pow(calcParent, exp);
-        double calcDenominator = n * calcBracket;
+        double calcDenominator = inputVal3 * calcBracket;
         double A = calcNum / calcDenominator;
-        return "A = " + A;
+        setReturnVal("A = " + A);
     }
 
-    public String CAGRFunction(double EV, double BV, double t) {
-        double getFraction = EV/BV;
-        double getExpFraction = 1/t;
+    public void CAGRFunction() {
+        double getFraction = inputVal1/inputVal2;
+        double getExpFraction = 1/inputVal3;
         double Exponential = Math.pow(getFraction, getExpFraction);
-        double CAGR = Exponential - 1;
-        return "The Compound Annual Growth Rate is " + CAGR;
+        double ans = Exponential - 1;
+        setReturnVal("The Compound Annual Growth Rate is " + ans);
     }
 
-    public String CashFlowFunction(double income, double expense) {
-        double CashFlow = income - expense;
-        return "The Cash Flow is " + CashFlow;
+    public void CashFlowFunction() {
+        double CashFlow = inputVal1 - inputVal2;
+        setReturnVal("The Cash Flow is " + CashFlow);
     }
 
-    public String CCEAPRFunction(double b, double p, double APR) {
-        double i = APR/365;
+    public void CCEAPRFunction() {
+        double i = inputVal3/365;
         double getInnermostParenthesis = Math.pow(1 + i, 30);
-        double getMiddleParenthesis = (b/p) * (1 - getInnermostParenthesis);
+        double getMiddleParenthesis = (inputVal1/inputVal2) * (1 - getInnermostParenthesis);
         double getWholeParenthesis = 1 + getMiddleParenthesis;
         double getNumerator = Math.log(getWholeParenthesis);
         double getDenominator = Math.log(1 + i);
-        double u = 1;
-        double getProduct = -u/30;
+        double getProduct = -((double) 1/(double) 30);
         double N = getProduct * (getNumerator/getDenominator);
-        return "It will take " + N + " years to pay off your credit card.";
+        setReturnVal("It will take " + N + " years to pay off your credit card.");
     }
 
-    public String CCEIRFunction(double b, double p, double i) {
-        double getInnermostParenthesis = Math.pow(1 + i, 30);
-        double getMiddleParenthesis = (b/p) * (1 - getInnermostParenthesis);
+    public void CCEIRFunction() {
+        double getInnermostParenthesis = Math.pow(1 + inputVal3, 30);
+        double getMiddleParenthesis = (inputVal1/inputVal2) * (1 - getInnermostParenthesis);
         double getWholeParenthesis = ++getMiddleParenthesis;
         double getNumerator = Math.log(getWholeParenthesis);
-        double getDenominator = Math.log(1 + i);
-        double u = 1;
-        double getProduct = -u/30;
+        double getDenominator = Math.log(1 + inputVal3);
+        double getProduct = -((double) 1/(double) 30);
         double N = getProduct * (getNumerator/getDenominator);
-        return "It will take " + N + " years to pay off your credit card.";
+        setReturnVal("It will take " + N + " years to pay off your credit card.");
     }
 
-    public String CompoundInterestFunction(double P, double r, double n, double t) {
-        double getParenthesis = 1 + (r/n);
-        double getExponent = Math.pow(getParenthesis, n*t);
-        double AmountAcc = P * getExponent;
-        return "Amount Accumulated is " + AmountAcc;
+    public void CompoundInterestFunction() {
+        double getParenthesis = 1 + (inputVal2/inputVal3);
+        double getExponent = Math.pow(getParenthesis, inputVal3*inputVal4);
+        double AmountAcc = inputVal1 * getExponent;
+        setReturnVal("Amount Accumulated is " + AmountAcc);
     }
 
-    public String GDPFunction(double I, double C, double G, double X, double n) {
-        double getAnswer = C + I + G + (X - n);
-        return "The GDP is " + getAnswer;
+    public void GDPFunction() {
+        double getAnswer = inputVal2 + inputVal1 + inputVal3 + (inputVal4 - inputVal5);
+        setReturnVal("The GDP is " + getAnswer);
     }
 
-    public String FVOAFunction(double PMT, double r, double t) {
-        double exponent = Math.pow((1 + r), t);
-        double getFraction1 = exponent / r;
-        double getFraction2 = 1 / r;
+    public void FVOAFunction() {
+        double exponent = Math.pow((1 + inputVal2), inputVal3);
+        double getFraction1 = exponent / inputVal2;
+        double getFraction2 = 1 / inputVal2;
         double getDiff = getFraction1 - getFraction2;
-        double FV = PMT * getDiff;
-        return "The Future Value of an Ordinary Annuity is " + FV;
+        double FV = inputVal1 * getDiff;
+        setReturnVal("The Future Value of an Ordinary Annuity is " + FV);
     }
 
 
-    public String R72Function(double r) {
-        double ruleOf72 = 72 / r;
-        return "The rule of 72 is " + ruleOf72;
+    public void R72Function() {
+        double ruleOf72 = 72 / inputVal1;
+        setReturnVal("The rule of 72 is " + ruleOf72);
     }
 
-    public String PFunction(double PMT, double r, double t) {
-        double getFractionOne = 1 / r;
-        double getFractionTwo = 1 / (r * Math.pow((1 + r), t));
+    public void PFunction() {
+        double getFractionOne = 1 / inputVal2;
+        double getFractionTwo = 1 / (inputVal2 * Math.pow((1 + inputVal2), inputVal3));
         double getParenthesis = getFractionOne - getFractionTwo;
-        double PV = PMT * getParenthesis;
-        return "The Present Value is " + PV;
+        double PV = inputVal1 * getParenthesis;
+        setReturnVal("The Present Value is " + PV);
     }
 
-    public String SimpleInterestFunction(double P, double r, double t) {
-        double SI = P * r * t;
-        return "Simple Interest is = " + SI;
+    public void SimpleInterestFunction() {
+        double SI = inputVal1 * inputVal2 * inputVal3;
+        setReturnVal("Simple Interest is = " + SI);
     }
 
-    public String LeverageRatioFunction(double TL, double TD, double TI) {
-        double Numerator = TL + TD;
-        double LevRatio = Numerator / TI;
-        return "The Leverage Ratio is " + LevRatio;
+    public void LeverageRatioFunction() {
+        double Numerator = inputVal1 + inputVal2;
+        double LevRatio = Numerator / inputVal3;
+        setReturnVal("The Leverage Ratio is " + LevRatio);
     }
 
     public void PhysicsConstants(int getInteger) {
