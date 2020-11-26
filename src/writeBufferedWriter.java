@@ -10,7 +10,6 @@ class classBufferedWriter {
         FileWriter fr = new FileWriter(file, true);
         BufferedWriter br = new BufferedWriter(fr);
         try {
-            //br.newLine();
             br.write(data + "\r\n");
             br.close();
 
