@@ -8,8 +8,10 @@ public class MathTask {
 
         Scanner sc = new Scanner(System.in);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StatsFunctions StatsFunction = new StatsFunctions();
         classBufferedWriter cBW = new classBufferedWriter();
+        classWriteFile cWF = new classWriteFile();
+        CreateFile FC = new CreateFile();
+        Functions fRet = new Functions();
         String returnVal = "";
         boolean loopVal = true;
         do {
@@ -49,7 +51,7 @@ public class MathTask {
                     System.out.print("Number of periods> ");
                     double t = sc.nextDouble();
 
-                    returnVal = StatsFunction.AmortizationFunction(r, P, n1, t);
+                    returnVal = fRet.AmortizationFunction(r, P, n1, t);
                     System.out.println(returnVal);
 
                     break;
@@ -62,7 +64,7 @@ public class MathTask {
                     System.out.print("Number of Periods> ");
                     double t1 = sc.nextDouble();
 
-                    returnVal = StatsFunction.SimpleInterestFunction(P1, r1, t1);
+                    returnVal = fRet.SimpleInterestFunction(P1, r1, t1);
                     System.out.println(returnVal);
 
                     break;
@@ -77,7 +79,7 @@ public class MathTask {
                     System.out.print("Number of Periods> ");
                     double t2 = sc.nextDouble();
 
-                    returnVal = StatsFunction.CompoundInterestFunction(P2, r2, n2, t2);
+                    returnVal = fRet.CompoundInterestFunction(P2, r2, n2, t2);
                     System.out.println(returnVal);
 
                     break;
@@ -88,7 +90,7 @@ public class MathTask {
                     System.out.print("Expense> ");
                     double expense = sc.nextDouble();
 
-                    returnVal = StatsFunction.CashFlowFunction(income, expense);
+                    returnVal = fRet.CashFlowFunction(income, expense);
                     System.out.println(returnVal);
 
                     break;
@@ -101,7 +103,7 @@ public class MathTask {
                     System.out.print("number of payments> ");
                     double t3 = sc.nextDouble();
 
-                    returnVal = StatsFunction.PFunction(PMT, r3, t3);
+                    returnVal = fRet.PFunction(PMT, r3, t3);
                     System.out.println(returnVal);
 
                     break;
@@ -114,7 +116,7 @@ public class MathTask {
                     System.out.print("Number of Payments> ");
                     double t4 = sc.nextDouble();
 
-                    returnVal = StatsFunction.FVOAFunction(PMT1, r4, t4);
+                    returnVal = fRet.FVOAFunction(PMT1, r4, t4);
                     System.out.println(returnVal);
 
                     break;
@@ -127,7 +129,7 @@ public class MathTask {
                     System.out.print("Number of Periods> ");
                     double t5 = sc.nextDouble();
 
-                    returnVal = StatsFunction.CAGRFunction(EV, BV, t5);
+                    returnVal = fRet.CAGRFunction(EV, BV, t5);
                     System.out.println(returnVal);
 
                     break;
@@ -140,7 +142,7 @@ public class MathTask {
                     System.out.print("Total Income> ");
                     double TI = sc.nextDouble();
 
-                    returnVal = StatsFunction.LeverageRatioFunction(TL, TD, TI);
+                    returnVal = fRet.LeverageRatioFunction(TL, TD, TI);
                     System.out.println(returnVal);
 
                     break;
@@ -149,7 +151,7 @@ public class MathTask {
                     System.out.print("Interest Rate> ");
                     double r5 = sc.nextDouble();
 
-                    returnVal = StatsFunction.R72Function(r5);
+                    returnVal = fRet.R72Function(r5);
                     System.out.println(returnVal);
 
                     break;
@@ -167,13 +169,13 @@ public class MathTask {
                         System.out.print("Interest rate> ");
                         double i = sc.nextDouble();
 
-                        returnVal = StatsFunction.CCEIRFunction(b, p, i);
+                        returnVal = fRet.CCEIRFunction(b, p, i);
                     }
                     if (Ans.equals("No")) {
                         System.out.print("APR> ");
                         double APR = sc.nextDouble();
 
-                        returnVal = StatsFunction.CCEAPRFunction(b, p, APR);
+                        returnVal = fRet.CCEAPRFunction(b, p, APR);
                     }
                     System.out.println(returnVal);
 
@@ -190,7 +192,7 @@ public class MathTask {
                     double X = sc.nextDouble();
                     System.out.print("Imports> ");
                     double N = sc.nextDouble();
-                    returnVal = StatsFunction.GDPFunction(I, C, G, X, N);
+                    returnVal = fRet.GDPFunction(I, C, G, X, N);
                     System.out.println(returnVal);
 
                     break;
@@ -217,8 +219,7 @@ public class MathTask {
                     System.out.print(userMenu);
 
                     int getInteger = sc.nextInt();
-                    PhysicsConstants PC = new PhysicsConstants(getInteger);
-                    System.out.println(PC);
+                    fRet.PhysicsConstants(getInteger);
 
                     break;
 
@@ -234,8 +235,10 @@ public class MathTask {
                             System.out.println("Directory input should be in the form of \\Folder\\");
                             String getDir = sc.next();
 
-                            CreateFile CF = new CreateFile(getName, getDir);
-                            System.out.println(CF);
+                            FC.setGetName(getName);
+                            FC.setGetDir(getDir);
+                            FC.createFile();
+
                             n++;
                         } while (n <= getMax);
                         b3++;
@@ -256,8 +259,7 @@ public class MathTask {
 
                         System.out.println(getWrite);
 
-                        WriteFile RF = new WriteFile(getWrite, getDirectory, getNameOfFile);
-                        System.out.println(RF);
+                        cWF.WriteFile(getWrite, getDirectory, getNameOfFile);
 
                         System.out.print("Do you want to do another? (y/n)");
                         String finish = sc.next();
@@ -272,14 +274,11 @@ public class MathTask {
 
                 case "16":
 
-                    System.out.println("Name of file");
                     String getFileName = "TrigTable";
-
-                    System.out.println("Directory input should be in the form of \\Folder\\");
                     String getNewDir = "\\TRIG-TABLE\\";
-
-                    CreateFile FC = new CreateFile(getFileName, getNewDir);
-                    System.out.println(FC);
+                    FC.setGetName(getFileName);
+                    FC.setGetDir(getNewDir);
+                    FC.createFile();
 
                     int getTable = sc.nextInt();
                     if (getTable == 0) {
@@ -289,11 +288,8 @@ public class MathTask {
                             double getValue = Math.sin(theta * (Math.PI / 180));
                             String getStringValue = theta + "     " + getValue;
 
-                            WriteFile WF = new WriteFile(getStringValue, getNewDir, getFileName);
-                            System.out.println(WF);
-
+                            cWF.WriteFile(getStringValue, getNewDir, getFileName);
                             theta += 1;
-                            System.out.println(theta);
                         }
                         while (theta < 360);
                     }
@@ -307,9 +303,7 @@ public class MathTask {
                         String getDirectory = "\\TRIG-TABLE\\";
                         String getFile = "TrigTable";
                         String exitMSG = cBW.writeBufferedWriter(getText, getDirectory, getFile);
-                        System.out.println(exitMSG);
-
-                        System.out.println("Give value for a");
+                        fRet.setReturnVal(exitMSG);
                         a++;
                     }
                     while (a < 10);
@@ -325,8 +319,11 @@ public class MathTask {
                     break;
 
                 default:
-                    System.out.println("Error: value not valid");
+                    String msg = "Error: value not valid";
+                    fRet.setReturnVal(msg);
             }
+            System.out.println(fRet.getReturnVal());
+            fRet.setReturnVal(null);
         }
         while (loopVal);
     }

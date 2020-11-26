@@ -1,8 +1,8 @@
 import java.io.*;
 
-public class WriteFile {
+public class classWriteFile {
 
-    public WriteFile(String getWrite, String getDirectory, String getNameOfFile) throws IOException {
+    public void WriteFile(String getWrite, String getDirectory, String getNameOfFile) throws IOException {
 
         String path = System.getProperty("user.dir") + getDirectory + getNameOfFile + ".txt";
         String errorPath = System.getProperty("user.dir") + "\\ERROR-CACHE\\ERROR-1.txt";

@@ -1,14 +1,14 @@
 public class Functions {
-    private double returnVal;
+    private String returnVal;
     private double inputVal1;
     private double inputVal2;
     private double inputVal3;
     private double inputVal4;
 
-    public void setReturnVal(double returnVal) {
+    public void setReturnVal(String returnVal) {
         this.returnVal = returnVal;
     }
-    public double getReturnVal() {
+    public String getReturnVal() {
         return this.returnVal;
     }
 
@@ -39,9 +39,6 @@ public class Functions {
     public double getInputVal4() {
         return inputVal4;
     }
-}
-
-class StatsFunctions {
 
     public String AmortizationFunction(double r, double P, double n, double t) {
         double calcNum = r * P;
@@ -112,6 +109,7 @@ class StatsFunctions {
         return "The Future Value of an Ordinary Annuity is " + FV;
     }
 
+
     public String R72Function(double r) {
         double ruleOf72 = 72 / r;
         return "The rule of 72 is " + ruleOf72;
@@ -135,130 +133,128 @@ class StatsFunctions {
         double LevRatio = Numerator / TI;
         return "The Leverage Ratio is " + LevRatio;
     }
-}
 
-class PhysicsConstants {
-
-    public PhysicsConstants(int getInteger) {
+    public void PhysicsConstants(int getInteger) {
         double g;
         String h;
         switch (getInteger) {
             case 0:
                 g = 1.660539040 * Math.pow(10, -27);
                 h = "kg";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 1:
                 g = 6.022140859 * Math.pow(10, 23);
                 h = "1/mol";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 2:
                 g = 1.3806485 * Math.pow(10, -23);
                 h = "J/K";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 3:
                 g = 1.6021766208 * Math.pow(10, -19);
                 h = "C";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 4:
                 g = 9.648533289 * Math.pow(10, 4);
                 h = "C/mol";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 5:
                 g = 0.0820582;
                 h = "L-atm/mol-K";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 6:
                 g = 8.3144598;
                 h = "J/mol-K";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 7:
                 g = 5.4857990946 * Math.pow(10, -4);
                 h = "amu";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 8:
                 g = 9.10938356 * Math.pow(10, -31);
                 h = "kg";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 9:
                 g = 1.008664916;
                 h = "amu";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 10:
                 g = 1.674927471 * Math.pow(10, -27);
                 h = "kg";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 11:
                 g = 1.007276466;
                 h = "amu";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 12:
                 g = 1.672621898 * Math.pow(10, -27);
                 h = "kg";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 13:
                 g = 6.626070040 * Math.pow(10, -34);
                 h = "J-s";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 14:
                 g = 2.99792458 * Math.pow(10, 8);
                 h = "m/s";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 15:
                 g = 6.67384 * Math.pow(10, -11);
                 h = "N-m^2/kg^2";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 16:
                 g = (4 * Math.PI) * Math.pow(10, -7);
                 h = "Wb/A-m";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 17:
                 g = 8.854187817 * Math.pow(10, -12);
                 h = "C^2/N-m^2";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             case 18:
                 g = 8.987551787 * Math.pow(10, 9);
                 h = "N-m^2/C^2";
-                System.out.println("The Value of the constant you chose is " + g + " " + h);
+                setReturnVal("The Value of the constant you chose is " + g + " " + h);
                 break;
 
             default:
                 System.out.println("ERROR: OPTION NOT VALID");
         }
+
     }
 }

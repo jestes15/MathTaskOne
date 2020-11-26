@@ -1,8 +1,18 @@
 import java.io.*;
 
 public class CreateFile {
+    private String getName;
+    private String getDir;
 
-    public CreateFile(String getName, String getDir) throws IOException {
+    public void setGetName(String getName) {
+        this.getName = getName;
+    }
+
+    public void setGetDir(String getDir) {
+        this.getDir = getDir;
+    }
+
+    public void createFile() throws IOException {
         String errorPath = System.getProperty("user.dir") + "\\ERROR-CACHE\\ERROR-1.txt";
 
         try {
